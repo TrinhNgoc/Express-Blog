@@ -2,6 +2,38 @@
 //find images
 //www.subtlepatterns.com
 
+//colors
+
+//font weight
+$font-bold: 700;
+
+$lobster: 'Lobster', cursive;
+$bree: 'Bree Serif', serif;
+
+@import "http://fonts.googleapis.com/css?family=Lobster:300,700.css";
+@import "http://fonts.googleapis.com/css?family=Bree+Serif:300,700.css";
+@import "partials/settings";
+@import "../public/bower_components/foundation/scss/foundation.scss";
+
 body {
   background-color: blue;
 }
+
+h1 {
+  font-size: 25px;
+  font-weight: $font-bold;
+  color: red;
+  font-family: $lobster;
+}
+
+.active div.orbit-caption {
+  font-family: $bree;
+  color: green;
+}
+
+
+
+
+
+
+
