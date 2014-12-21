@@ -16,7 +16,9 @@ $bree: 'Bree Serif', serif;
 @import "../public/bower_components/foundation/scss/foundation.scss";
 
 body {
-  background-color: blue;
+  // background-color: blue;
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat;
 }
 
 h1 {
@@ -26,12 +28,10 @@ h1 {
   font-family: $lobster;
 }
 
-.active div.orbit-caption {
-  font-family: $bree;
-  color: green;
-}
-
-
+  div.orbit-caption {
+    font-family: $bree;
+    color: green;
+  }
 
 
 

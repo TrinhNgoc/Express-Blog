@@ -6028,7 +6028,8 @@ th.hide-for-touch {
  }
 
 body {
-  background-color: blue; }
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat; }
 
 h1 {
   font-size: 25px;
@@ -6036,6 +6037,6 @@ h1 {
   color: red;
   font-family: 'Lobster', cursive; }
 
-.active div.orbit-caption {
+div.orbit-caption {
   font-family: 'Bree Serif', serif;
   color: green; }
