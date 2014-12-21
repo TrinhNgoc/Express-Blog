@@ -16,9 +16,23 @@ $bree: 'Bree Serif', serif;
 @import "../public/bower_components/foundation/scss/foundation.scss";
 
 body {
+  @media #{$large-up} {
   // background-color: blue;
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat;
+  }
+
+  @media #{$medium-only} {
+  // background-color: blue;
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat;
+  }
+
+  @media #{$small-only} {
+  // background-color: blue;
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat;  
+  }
 }
 
 h1 {
@@ -28,10 +42,25 @@ h1 {
   font-family: $lobster;
 }
 
-  div.orbit-caption {
-    font-family: $bree;
-    color: green;
+div#blog_main {
+  padding: 80px;
+  margin-left: 20px;
+}
+
+div.blog_content {
+  margin-bottom: 50px;
+}
+  
+ul img {
+    @media #{large-up} {
+      img {
+      height: 500px;
+      height: 500px;
+      display: inline-block;
+    }
   }
+}
+
 
 
 

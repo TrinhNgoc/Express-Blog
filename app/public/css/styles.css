@@ -6027,9 +6027,18 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
-body {
-  background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat; }
+@media only screen and (min-width:64.063em) {
+  body {
+    background-image: url('/images/layout/washi/washi.png');
+    background-repeat: repeat; } }
+@media only screen and (min-width:40.063em) and (max-width:64em) {
+  body {
+    background-image: url('/images/layout/washi/washi.png');
+    background-repeat: repeat; } }
+@media only screen and (max-width: 40em) {
+  body {
+    background-image: url('/images/layout/washi/washi.png');
+    background-repeat: repeat; } }
 
 h1 {
   font-size: 25px;
@@ -6037,6 +6046,16 @@ h1 {
   color: red;
   font-family: 'Lobster', cursive; }
 
-div.orbit-caption {
-  font-family: 'Bree Serif', serif;
-  color: green; }
+div#blog_main {
+  padding: 80px;
+  margin-left: 20px; }
+
+div.blog_content {
+  margin-bottom: 50px; }
+
+@media large-up {
+  ul img img {
+    height: 500px;
+    height: 500px;
+    display: inline-block; }
+ }
