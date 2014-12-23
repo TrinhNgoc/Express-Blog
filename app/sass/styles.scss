@@ -16,26 +16,23 @@ $bree: 'Bree Serif', serif;
 @import "../public/bower_components/foundation/scss/foundation.scss";
 
 body {
+  // background-image: url('/images/layout/washi/washi.png');
+  // background-repeat: repeat; 
+
   @media #{$large-up} {
-  // background-color: blue;
-  background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat;
+  background-color: blue;
   }
 
   @media #{$medium-only} {
-  // background-color: blue;
-  background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat;
+  background-color: yellow;
   }
 
   @media #{$small-only} {
-  // background-color: blue;
-  background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat;  
+  background-color: pink; 
   }
 }
 
-h1 {
+#page_header .title {
   font-size: 25px;
   font-weight: $font-bold;
   color: red;
@@ -43,23 +40,28 @@ h1 {
 }
 
 div#blog_main {
-  padding: 80px;
-  margin-left: 20px;
-}
-
-div.blog_content {
-  margin-bottom: 50px;
-}
-  
-ul img {
-    @media #{large-up} {
-      img {
-      height: 500px;
-      height: 500px;
-      display: inline-block;
+  @media #{$medium-up} {
+    padding: 80px;
+  }
+  div.blog_content {
+    max-width: 900px;
+    margin: 50px auto;
+    display: block;
+    @media #{$large-up} {
+      height: 450px;
+      width: 730px;
+    }
+    @media #{$medium-only} {
+      max-width: 460px;
+      }
+    @media #{$small-only} {
+      height: 200px;
+      width: 320px;
+      padding-bottom: 175px;
+      padding-top: 50px;
+      }
     }
   }
-}
 
 
 
