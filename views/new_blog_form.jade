@@ -1,0 +1,14 @@
+extends ./layout.jade
+
+
+
+block new_post_form
+  div.new_post
+    form#new_post(action='/index' method='POST')
+      label.form_labels(for="form_author") Author
+      input#form_author(type='text')
+      label.form_labels(for="form_title") Title
+      input#form_title(type='text')
+      label.form_labels(for="form_body") Blog Body
+      textarea#form_body(form="new_post")
+      button(type='submit') Submit

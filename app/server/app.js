@@ -28,14 +28,15 @@ mongoose.connect(CONNECTION_STRING);
 // ROUTES
 
 app.get('/', function (req, res) {
-  res.render("index");
+  res.render("./index");
 });
 
 app.get('/new_blog', function (req, res) {
   
-  var new_blog_post = "<form method='POST'> <input type='text' placeholder='author'> <input type='text' placeholder='title'> <input type='text' placeholder='body'> <button type='submit'>Submit</button> </form>";
+  // var new_blog_post = "<form method='POST'> <input type='text' placeholder='author'> <input type='text' placeholder='title'> <input type='text' placeholder='body'> <button type='submit'>Submit</button> </form>";
 
-  res.send(new_blog_post);
+  // res.send(new_blog_post);
+  res.render("new_blog_form.jade");
 
 
 });

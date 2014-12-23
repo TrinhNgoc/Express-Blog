@@ -2,6 +2,35 @@
 //find images
 //www.subtlepatterns.com
 
-body {
-  background-color: blue;
+div.new_post{
+
+  text-align: center;
+
+  form#new_post {
+
+    display: inline-block;
+    // background-color: red;
+    margin: 0px auto;
+
+    input {
+
+      width: 300px;
+
+    }
+
+    label.form_labels {
+      display: block;
+    }
+
+
+    textarea#form_body{
+      display: block;
+      width: 600px;
+      height: 600px;
+      vertical-align: top;
+      font-size: 15px;
+    }
+
+
+  }
 }
