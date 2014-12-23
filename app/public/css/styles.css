@@ -6087,3 +6087,11 @@ div#blog_main div.orbit-caption {
 
 .orbit-container .orbit-slides-container {
   list-style: none; }
+
+.orbit-timer {
+  left: -10000px;
+  top: auto;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px; }

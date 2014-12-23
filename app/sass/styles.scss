@@ -106,21 +106,15 @@ div#blog_main {
 .orbit-container .orbit-slides-container {
   list-style: none;
 }
-// div.orbit-bullets-container {
-//   background-color: red;
-//   margin-top: -125px;
-// }
 
-//TO DO 
-// ul.example-orbit-slides-container
-// ul .data-orbit {
-//   height: 250px;
-// }
-
-// ul.example-orbit.orbit-slides-container {
-//   height: 250px;
-// }
-
+.orbit-timer {
+  left: -10000px;
+  top: auto;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
 
 
 
