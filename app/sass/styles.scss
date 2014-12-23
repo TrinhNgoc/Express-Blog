@@ -9,8 +9,10 @@ $font-bold: 700;
 
 $lobster: 'Lobster', cursive;
 $bree: 'Bree Serif', serif;
+$oleo: 'Oleo Script', cursive;
 
 @import "http://fonts.googleapis.com/css?family=Lobster:300,700.css";
+@import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Bree+Serif:300,700.css";
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
@@ -33,10 +35,11 @@ body {
 }
 
 #page_header .title {
-  font-size: 25px;
+  font-size: 50px;
   font-weight: $font-bold;
-  color: red;
-  font-family: $lobster;
+  color: black;
+  font-family: $oleo;
+  text-align: center;
 }
 
 div#blog_main {
@@ -63,9 +66,9 @@ div#blog_main {
     }
   }
 
-ul.example-orbit.orbit-slides-container {
-  height: 250px;
-}
+// ul.example-orbit.orbit-slides-container {
+//   height: 250px;
+// }
 
 .orbit-bullets li{
   border-radius: 0;
