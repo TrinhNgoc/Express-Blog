@@ -6063,3 +6063,10 @@ div#blog_main div.blog_content {
       width: 320px;
       padding-bottom: 175px;
       padding-top: 50px; } }
+
+ul.example-orbit.orbit-slides-container {
+  height: 250px; }
+
+.orbit-bullets li {
+  border-radius: 0;
+  width: 20px; }

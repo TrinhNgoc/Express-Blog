@@ -43,7 +43,7 @@ div#blog_main {
   @media #{$medium-up} {
     padding: 80px;
   }
-  div.blog_content {
+  div.blog_content { 
     max-width: 900px;
     margin: 50px auto;
     display: block;
@@ -63,6 +63,24 @@ div#blog_main {
     }
   }
 
+ul.example-orbit.orbit-slides-container {
+  height: 250px;
+}
+
+.orbit-bullets li{
+  border-radius: 0;
+  width: 20px;
+}
+
+//TO DO 
+//ul.example-orbit-slides-container
+// ul .data-orbit {
+//   height: 250px;
+// }
+
+// ul.example-orbit.orbit-slides-container {
+//   height: 250px;
+// }
 
 
 
