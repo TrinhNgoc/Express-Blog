@@ -29,7 +29,7 @@ $( function () {
 // POST /blog
   function buildBlogPost () {
 
-    var blog_post = $("<ul data-orbit style='height: 700px;'>", {
+    var blog_post = $("<ul data-orbit style='height: 500px;'>", {
       class: "blog_post"
     });
 
@@ -73,17 +73,18 @@ $( function () {
     blog_post
       .append(blog_post_item)
       .append(nav_arrow_prev)
-      .append(nav_arrow_next)
-      .append(slide_number)
-      .append(slide_timer);
+      .append(nav_arrow_next);
+      // .append(slide_number)
+      // .append(slide_timer);
 
     slide_timer.append(slide_button);
     slide_bullet.append(slide_bullet_number);
 
     $(".orbit-container")
       .append(blog_post)
-      .append(slide_bullet);
-    
+      .append(slide_bullet)
+      .append(slide_number)
+      .append(slide_timer);
   }
 
   buildBlogPost();
