@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster:300,700.css);
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css);
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif:300,700.css);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700.css);
 meta.foundation-version {
   font-family: "/5.5.0/"; }
 
@@ -6045,9 +6046,6 @@ th.hide-for-touch {
   font-family: 'Oleo Script', cursive;
   text-align: center; }
 
-@media only screen and (min-width:40.063em) {
-  div#blog_main {
-    padding: 80px; } }
 div#blog_main div.blog_content {
   max-width: 900px;
   margin: 50px auto;
@@ -6062,10 +6060,30 @@ div#blog_main div.blog_content {
   @media only screen and (max-width: 40em) {
     div#blog_main div.blog_content {
       height: 200px;
-      width: 320px;
-      padding-bottom: 175px;
-      padding-top: 50px; } }
+      width: 320px; } }
+div#blog_main div.orbit-caption {
+  font-family: 'Lato', sans-serif; }
+  div#blog_main div.orbit-caption p {
+    margin-left: 3px; }
+  div#blog_main div.orbit-caption h3 {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin-top: -25px;
+    margin-bottom: -5px; }
+  div#blog_main div.orbit-caption p.tag {
+    padding-left: -25px;
+    margin-bottom: 10px; }
+  div#blog_main div.orbit-caption .button {
+    background-color: #FD234D;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    margin: 0 0;
+    border-radius: 2px; }
 
 .orbit-bullets li {
   border-radius: 0;
   width: 20px; }
+
+.orbit-container .orbit-slides-container {
+  list-style: none; }

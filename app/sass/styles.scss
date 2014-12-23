@@ -10,10 +10,12 @@ $font-bold: 700;
 $lobster: 'Lobster', cursive;
 $bree: 'Bree Serif', serif;
 $oleo: 'Oleo Script', cursive;
+$lato: 'Lato', sans-serif;
 
 @import "http://fonts.googleapis.com/css?family=Lobster:300,700.css";
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Bree+Serif:300,700.css";
+@import "http://fonts.googleapis.com/css?family=Lato:300,700.css";
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
 
@@ -44,7 +46,7 @@ body {
 
 div#blog_main {
   @media #{$medium-up} {
-    padding: 80px;
+    // padding: 80px;
   }
   div.blog_content { 
     max-width: 900px;
@@ -60,11 +62,37 @@ div#blog_main {
     @media #{$small-only} {
       height: 200px;
       width: 320px;
-      padding-bottom: 175px;
-      padding-top: 50px;
+      // padding-bottom: 175px;
+      // padding-top: 50px;
+      }
+    }//end of .blog_content
+    div.orbit-caption {
+      font-family: $lato;
+      p {
+        margin-left: 3px;
+      }
+      h3 {
+        font-family: $lato;
+        color: white;
+        margin-top: -25px;
+        margin-bottom: -5px;
+      }
+      p.tag{
+        //background-color: green;
+        padding-left: -25px;
+        margin-bottom: 10px;
+        
+      }
+      .button {
+        background-color: #FD234D;
+        padding-top: 7px;
+        padding-bottom: 10px;
+        font-family: $lato;
+        margin: 0 0;
+        border-radius: 2px;
       }
     }
-  }
+  }//end of #blog_main
 
 // ul.example-orbit.orbit-slides-container {
 //   height: 250px;
@@ -75,8 +103,16 @@ div#blog_main {
   width: 20px;
 }
 
+.orbit-container .orbit-slides-container {
+  list-style: none;
+}
+// div.orbit-bullets-container {
+//   background-color: red;
+//   margin-top: -125px;
+// }
+
 //TO DO 
-//ul.example-orbit-slides-container
+// ul.example-orbit-slides-container
 // ul .data-orbit {
 //   height: 250px;
 // }
