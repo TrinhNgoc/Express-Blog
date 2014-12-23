@@ -4,8 +4,7 @@ var mongoose = require('mongoose');
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
 
 // Middleware Area
-// app.use(express.static('/public'));
-app.use(express.static('/public'));
+app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
 
 mongoose.connect(CONNECTION_STRING);
@@ -29,7 +28,7 @@ mongoose.connect(CONNECTION_STRING);
 // ROUTES
 
 app.get('/', function (req, res) {
-  res.render("index.jade");
+  res.render("index");
 });
 
 app.get('/new_blog', function (req, res) {
