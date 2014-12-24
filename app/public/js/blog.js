@@ -94,6 +94,4 @@ $( function () {
 // DELETE /blog/:id
 
 
-=======
->>>>>>> c957c3f22a4344668614992ed9ae6e31910dd5d2
 });
