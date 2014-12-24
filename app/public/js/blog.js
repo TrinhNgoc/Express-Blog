@@ -1,11 +1,10 @@
 $( function () {
 
+
 // View list of blog post
 // GET /
   $.get('/', function (posts) {
-
-  });  
-
+  }
 
 
   function displayBlogPosts () {
@@ -95,4 +94,6 @@ $( function () {
 // DELETE /blog/:id
 
 
+=======
+>>>>>>> c957c3f22a4344668614992ed9ae6e31910dd5d2
 });
