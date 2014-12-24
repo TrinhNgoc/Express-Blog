@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
@@ -6,23 +7,22 @@ var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mon
 // Middleware Area
 app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 mongoose.connect(CONNECTION_STRING);
 
 
-// // SCHEMAS
+// SCHEMAS
 
-// var NewPostSchema = mongoose.Schema('NewPost', {
-//   author: String,
-//   title: String,
-//   body: String
-// });
+var postSchema = mongoose.Schema({
+  author: String,
+  title: String,
+  body: String
+});
 
-
-
-
-// // MODEL
-// var NewPost = mongoose.model('NewPost', NewPostSchema);
+// MODELS
+var Post = mongoose.model('Post', postSchema);
 
 
 // ROUTES
@@ -31,15 +31,24 @@ app.get('/', function (req, res) {
   res.render("./index");
 });
 
+//New Blog Link
 app.get('/new_blog', function (req, res) {
-  
-  // var new_blog_post = "<form method='POST'> <input type='text' placeholder='author'> <input type='text' placeholder='title'> <input type='text' placeholder='body'> <button type='submit'>Submit</button> </form>";
-
-  // res.send(new_blog_post);
   res.render("new_blog_form.jade");
-
-
 });
+
+app.post('/blog', function (req, res) {
+
+  var new_post = new Post(req.body);
+  new_post.save(function (err, image) {
+    if(err) {
+      throw err;
+    }
+    res.redirect('/');
+  })
+  // console.log(new_post.author);
+
+})
+
 
 
 
