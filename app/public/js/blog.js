@@ -38,7 +38,7 @@ $( function () {
 
     var blog_post_text = $("<div>", {
       class: "orbit-caption",
-      html: "Captions"
+      html: "<p>Captions</p>"
     });
 
     var nav_arrow_prev = 
@@ -74,8 +74,6 @@ $( function () {
       .append(blog_post_item)
       .append(nav_arrow_prev)
       .append(nav_arrow_next);
-      // .append(slide_number)
-      // .append(slide_timer);
 
     slide_timer.append(slide_button);
     slide_bullet.append(slide_bullet_number);
@@ -87,7 +85,7 @@ $( function () {
       .append(slide_timer);
   }
 
-  buildBlogPost();
+  // buildBlogPost();
 
 // Updates a single blog post identified by :id
 // PUT /blog/:id
