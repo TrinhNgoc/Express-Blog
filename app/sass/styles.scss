@@ -117,17 +117,30 @@ div#blog_main {
 }
 
 .orbit-container .orbit-prev {
-  top: 3%;
+  top: 1%;
+  background-color: #989C88;
+  margin-top: 1px;
+  margin-left: 4px;
 }
 
 .orbit-container .orbit-next {
-  top: 2.8%;
+  top: 1%;
+  background-color: #989C88;
+  padding-left: 30px;
+  margin-top: 1px;
+  margin-left: 4px;
+}
+
+.orbit-prev {
+  width: 28px !important;
+  height: 42px !important;
+  margin-right: 665px;
 }
 
 .orbit-next {
-  width: 16px !important;
-  height: 62px !important;
-  margin-right: 670px;
+  width: 30px !important;
+  height: 42px !important;
+  margin-right: 665px;
 }
 
 
