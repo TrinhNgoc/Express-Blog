@@ -1,7 +1,9 @@
 extends ./layout.jade
 
 
-
 block link
   a.new_post(href="/new_blog") NEW BLOG
-
+  
+  each blog in blogs
+    p 
+      =blog.title  

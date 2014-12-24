@@ -28,7 +28,15 @@ var Post = mongoose.model('Post', postSchema);
 // ROUTES
 
 app.get('/', function (req, res) {
-  res.render("./index");
+  Post.find(function (err, blogposts) {
+    if(err) {
+      console.log(err);
+    }
+    var locals = {
+      blogs: blogposts
+    }
+    res.render("./index", locals);
+  });
 });
 
 //New Blog Link
