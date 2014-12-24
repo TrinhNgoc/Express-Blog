@@ -6100,4 +6100,9 @@ div#blog_main div.orbit-caption {
   top: 3%; }
 
 .orbit-container .orbit-next {
-  top: 3%; }
+  top: 2.8%; }
+
+.orbit-next {
+  width: 16px !important;
+  height: 62px !important;
+  margin-right: 670px; }
