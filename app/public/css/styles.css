@@ -6048,6 +6048,9 @@ body #page_header .title {
   color: black;
   font-family: 'Oleo Script', cursive;
   text-align: center; }
+  @media only screen and (min-width:60.5625rem) {
+    body #page_header .title {
+      padding-top: 25px; } }
 
 div#blog_main div.blog_content {
   max-width: 900px;

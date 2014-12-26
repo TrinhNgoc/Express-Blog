@@ -49,6 +49,9 @@ body #page_header .title {
   color: black;
   font-family: $oleo;
   text-align: center;
+  @media #{$large-up} {
+    padding-top: 25px;
+  }  
 }
 
 div#blog_main {
