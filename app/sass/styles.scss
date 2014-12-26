@@ -43,7 +43,7 @@ body {
   }
 }
 
-#page_header .title {
+body #page_header .title {
   font-size: 50px;
   font-weight: $font-bold;
   color: black;
@@ -99,7 +99,7 @@ div#blog_main {
         font-weight: $font-light;
         font-size: 11px;
       }
-      .button {
+      a.button {
         background-color: #FD234D;
         padding-top: 7px;
         padding-bottom: 10px;
@@ -117,13 +117,16 @@ div#blog_main {
 ol.orbit-bullets li{
   border-radius: 0;
   width: 20px;
+  &.active {
+    background-color: #FD234D;
+  }
 }
 
-div.orbit-container .orbit-slides-container {
+div.orbit-container ul.orbit-slides-container {
   list-style: none;
 }
 
-.orbit-timer {
+div.orbit-timer {
   left: -10000px;
   top: auto;
   height: 1px;
@@ -132,7 +135,7 @@ div.orbit-container .orbit-slides-container {
   width: 1px;
 }
 
-.orbit-container .orbit-prev {
+div.orbit-container a.orbit-prev {
   top: 1%;
   background-color: #989C88;
   margin-top: 1px;
@@ -154,7 +157,7 @@ div.orbit-container .orbit-slides-container {
   }
 }
 
-div.orbit-container .orbit-next {
+div.orbit-container a.orbit-next {
   top: 1%;
   background-color: #989C88;
   padding-left: 30px;
@@ -175,13 +178,13 @@ div.orbit-container .orbit-next {
   }
 }
 
-.orbit-prev {
+a.orbit-prev {
   width: 28px !important;
   height: 42px !important;
   margin-right: 665px;
 }
 
-.orbit-next {
+a.orbit-next {
   width: 30px !important;
   height: 42px !important;
   margin-right: 665px;

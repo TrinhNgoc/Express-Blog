@@ -6042,7 +6042,7 @@ th.hide-for-touch {
   body {
     background-color: pink; } }
 
-#page_header .title {
+body #page_header .title {
   font-size: 50px;
   font-weight: 700;
   color: black;
@@ -6086,7 +6086,7 @@ div#blog_main div.orbit-caption {
     font-family: 'Exo 2', sans-serif;
     font-weight: 100;
     font-size: 11px; }
-  div#blog_main div.orbit-caption .button {
+  div#blog_main div.orbit-caption a.button {
     background-color: #FD234D;
     padding-top: 7px;
     padding-bottom: 10px;
@@ -6097,11 +6097,13 @@ div#blog_main div.orbit-caption {
 ol.orbit-bullets li {
   border-radius: 0;
   width: 20px; }
+  ol.orbit-bullets li.active {
+    background-color: #FD234D; }
 
-div.orbit-container .orbit-slides-container {
+div.orbit-container ul.orbit-slides-container {
   list-style: none; }
 
-.orbit-timer {
+div.orbit-timer {
   left: -10000px;
   top: auto;
   height: 1px;
@@ -6109,13 +6111,13 @@ div.orbit-container .orbit-slides-container {
   position: absolute;
   width: 1px; }
 
-.orbit-container .orbit-prev {
+div.orbit-container a.orbit-prev {
   top: 1%;
   background-color: #989C88;
   margin-top: 1px;
   margin-left: 4px;
   border-radius: 5px; }
-  .orbit-container .orbit-prev span {
+  div.orbit-container a.orbit-prev span {
     color: white;
     border: none;
     font-size: 25px;
@@ -6123,32 +6125,32 @@ div.orbit-container .orbit-slides-container {
     margin-top: -25px;
     font-family: 'Play', sans-serif;
     margin-left: 5px; }
-    .orbit-container .orbit-prev span:before {
+    div.orbit-container a.orbit-prev span:before {
       content: "<"; }
 
-div.orbit-container .orbit-next {
+div.orbit-container a.orbit-next {
   top: 1%;
   background-color: #989C88;
   padding-left: 30px;
   margin-top: 1px;
   margin-left: 4px;
   border-radius: 5px; }
-  div.orbit-container .orbit-next span {
+  div.orbit-container a.orbit-next span {
     color: white;
     border: none;
     font-size: 25px;
     text-indent: 0;
     margin-top: -25px;
     font-family: 'Play', sans-serif; }
-    div.orbit-container .orbit-next span:before {
+    div.orbit-container a.orbit-next span:before {
       content: ">"; }
 
-.orbit-prev {
+a.orbit-prev {
   width: 28px !important;
   height: 42px !important;
   margin-right: 665px; }
 
-.orbit-next {
+a.orbit-next {
   width: 30px !important;
   height: 42px !important;
   margin-right: 665px; }
