@@ -38,13 +38,14 @@ app.get('/', function (req, res) {
   });
 });
 
+//View Single Blog post
 app.get('/blog/:id', function (req, res) {
   Post.findById(req.params.id.substring(1), function (err, blog) {
     if(err) {
       return console.log(err);
     }
-    console.dir(blog);
     var locals = {
+      id: blog._id,
       author: blog.author,
       title: blog.title,
       body: blog.body
@@ -58,6 +59,22 @@ app.get('/blog/:id', function (req, res) {
 app.get('/new_blog', function (req, res) {
   res.render("new_blog_form.jade");
 });
+
+//Render Edit Blog Form
+app.get('/blog/:id/edit', function (req, res) {
+  Post.findById(req.params.id.substring(1), function (err, blog) {
+    if(err) {
+      return console.log(err);
+    }
+    var locals = {
+      id: blog._id,
+      author: blog.author,
+      title: blog.title,
+      body: blog.body
+    }
+    res.render('./edit_blog', locals);
+  });
+})
 
 //Submit a new blog
 app.post('/blog', function (req, res) {
