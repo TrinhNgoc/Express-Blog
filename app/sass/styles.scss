@@ -2,22 +2,26 @@
 //find images
 //www.subtlepatterns.com
 
-//colors
-
 //font weight
 $font-bold: 700;
+$font-light: 100;
 
+//colors
 $lobster: 'Lobster', cursive;
 $bree: 'Bree Serif', serif;
 $oleo: 'Oleo Script', cursive;
 $lato: 'Lato', sans-serif;
 $play: 'Play', sans-serif;
+$exo: 'Exo 2', sans-serif;
+$josefin: 'Josefin Slab', serif;
 
 @import "http://fonts.googleapis.com/css?family=Lobster:300,700.css";
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Bree+Serif:100,300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Lato:300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Play:400,700.css";
+@import "http://fonts.googleapis.com/css?family=Exo+2:400,100.css";
+@import "http://fonts.googleapis.com/css?family=Josefin+Slab:400.css";
 
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
@@ -72,19 +76,28 @@ div#blog_main {
     div.orbit-caption {
       font-family: $lato;
       p {
-        margin-left: 3px;
+        font-family: $exo;
+        font-weight: $font-light;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13px;
+        margin-bottom: 25px;
       }
       h3 {
         font-family: $lato;
         color: white;
         margin-top: -25px;
         margin-bottom: -5px;
+        font-family: $josefin;
+        font-weight: $font-bold;
       }
       p.tag{
         //background-color: green;
         padding-left: -25px;
         margin-bottom: 10px;
-        
+        font-family: $exo;
+        font-weight: $font-light;
+        font-size: 11px;
       }
       .button {
         background-color: #FD234D;
