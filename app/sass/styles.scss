@@ -168,14 +168,13 @@ div.orbit-container a.orbit-next {
   margin-top: 1px;
   margin-left: 4px;
   border-radius: 5px;
-      span {
+    span {
     color: white;
     border: none;
     font-size: 25px;
     text-indent: 0;
     margin-top: -25px;
     font-family: $play;
-    // font-weight: 400;
     &:before {
       content: ">";
     }
@@ -192,6 +191,9 @@ a.orbit-next {
   width: 30px !important;
   height: 42px !important;
   margin-right: 665px;
+  @media #{$medium-only} {
+    margin-right: 395px;
+  }
 }
 
 

@@ -6158,3 +6158,6 @@ a.orbit-next {
   width: 30px !important;
   height: 42px !important;
   margin-right: 665px; }
+  @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
+    a.orbit-next {
+      margin-right: 395px; } }
