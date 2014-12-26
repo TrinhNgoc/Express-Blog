@@ -6095,7 +6095,8 @@ div#blog_main div.orbit-caption {
     padding-bottom: 10px;
     font-family: 'Lato', sans-serif;
     margin: 0 0;
-    border-radius: 2px; }
+    border-radius: 2px;
+    width: 140px; }
 
 ol.orbit-bullets li {
   border-radius: 0;
