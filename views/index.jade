@@ -5,5 +5,6 @@ block link
   a.new_post(href="/new_blog") NEW BLOG
   
   each blog in blogs
-    p 
-      =blog.title  
+    p
+      a(href="/blog/:"+blog.id) 
+        =blog.title 

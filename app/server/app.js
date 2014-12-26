@@ -9,9 +9,7 @@ app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 mongoose.connect(CONNECTION_STRING);
-
 
 // SCHEMAS
 
@@ -27,6 +25,7 @@ var Post = mongoose.model('Post', postSchema);
 
 // ROUTES
 
+//Render all blog posts
 app.get('/', function (req, res) {
   Post.find(function (err, blogposts) {
     if(err) {
@@ -39,11 +38,28 @@ app.get('/', function (req, res) {
   });
 });
 
-//New Blog Link
+app.get('/blog/:id', function (req, res) {
+  Post.findById(req.params.id.substring(1), function (err, blog) {
+    if(err) {
+      return console.log(err);
+    }
+    console.dir(blog);
+    var locals = {
+      author: blog.author,
+      title: blog.title,
+      body: blog.body
+    }
+    res.render('./single_blog', locals);
+  });
+});
+
+
+//Render New Blog Form
 app.get('/new_blog', function (req, res) {
   res.render("new_blog_form.jade");
 });
 
+//Submit a new blog
 app.post('/blog', function (req, res) {
 
   var new_post = new Post(req.body);
@@ -53,7 +69,6 @@ app.post('/blog', function (req, res) {
     }
     res.redirect('/');
   })
-  // console.log(new_post.author);
 
 })
 
