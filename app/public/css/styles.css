@@ -6028,6 +6028,13 @@ th.hide-for-touch {
 body {
   background-color: none; }
 
+div#single_blog div.post {
+  margin-bottom: 20px; }
+div#single_blog form {
+  display: inline-block; }
+  div#single_blog form#delete_link {
+    margin-left: 10px; }
+
 div.new_post {
   text-align: center; }
   div.new_post form#new_post {

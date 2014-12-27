@@ -10,6 +10,37 @@ body {
   background-color: none;
 }
 
+
+//Styles for Single Blog Post Page
+
+div#single_blog{
+
+  // background-color: red;
+
+
+  div.post {
+    margin-bottom: 20px;
+  }
+
+  
+  form {
+    display: inline-block;
+
+    &#delete_link {
+      margin-left: 10px;
+    }
+
+    button {
+      // font-family: sans-serif;  
+    }
+
+  }
+
+
+}
+
+
+//Styles for New_Post Page
 div.new_post{
 
   text-align: center;

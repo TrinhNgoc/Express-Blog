@@ -1,20 +1,30 @@
 extends ./layout.jade
 
 
+
+
 block single_blog_post
 
-  p Title: 
-    =title
+  //- script.
+  //-   var formated_body = body.split(/\r?\n\r?\n/g);
+  //-   //- console.log(body);
+  //-   alert("WHAT");
 
-  p Author: 
-    =author
+  div#single_blog
+    div.row
+      div.small-9.small-centered.columns
+        h3.title 
+          =title
+        p.author by 
+          =author
+      div.small-9.small-centered.columns
+        div.post
+          span
+            =body
+      div.small-9.small-centered.columns
+        form#edit_link(action='/blog/'+id+'/edit' method='GET')
+          button(type='submit') Edit Post
 
-  p Post:
-    =body
-
-  form#edit_link(action='/blog/'+id+'/edit' method='GET')
-    button(type='submit') Edit Post
-
-  form#delete_link(action='/blog/'+id+'?_method=DELETE' method='POST')
-    input(type='hidden' name='_method' value='DELETE')
-    button(type='submit') Delete Post
+        form#delete_link(action='/blog/'+id+'?_method=DELETE' method='POST')
+          input(type='hidden' name='_method' value='DELETE')
+          button(type='submit') Delete Post

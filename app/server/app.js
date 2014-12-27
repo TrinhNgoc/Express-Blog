@@ -48,8 +48,11 @@ app.get('/blog/:id', function (req, res) {
       id: blog._id,
       author: blog.author,
       title: blog.title,
-      body: blog.body
-    }
+      // body: blog.body.replace(/\r?\n/g, '<br/>')
+      body: blog.body.replace(/\r?\n\r?\n/g, '<br/>')
+
+    };
+
     res.render('./single_blog', locals);
   });
 });
