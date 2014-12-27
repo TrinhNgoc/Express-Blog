@@ -5,3 +5,39 @@ extends ./layout.jade
 block link
   a.new_post(href="/new_blog") NEW BLOG
 
+block slider
+  div.orbit-container
+    ul(data-orbit, class="orbit-slides-container", style="height: 460px;")
+      li
+        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 1")
+        div.orbit-caption
+          | Caption One
+      li
+        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 2")
+        div.orbit-caption
+          | Caption Two
+      li 
+        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 3")
+        div.orbit-caption
+          | Caption Three
+      li 
+        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 4")
+        div.orbit-caption
+          | Caption Four
+    a(href"#", class="orbit-prev")
+      span
+    a(href"#", class="orbit-next")
+      span
+    div.orbit-timer
+      span
+      div.orbit-progress
+    div.orbit-slide-number
+      span 1
+      | of
+      span 4
+  div.orbit-bullets-container
+    ol.orbit-bullets
+      li(data-orbit-slide-number="1")
+      li(data-orbit-slide-number="2")
+      li(data-orbit-slide-number="3")
+      li(data-orbit-slide-number="4")
