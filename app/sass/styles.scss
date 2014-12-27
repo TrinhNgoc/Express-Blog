@@ -4,54 +4,57 @@
 
 //font weight
 $font-bold: 700;
+$font-semibold: 600;
 $font-light: 100;
 
 //colors
-$lobster: 'Lobster', cursive;
-$bree: 'Bree Serif', serif;
 $oleo: 'Oleo Script', cursive;
 $lato: 'Lato', sans-serif;
 $play: 'Play', sans-serif;
 $exo: 'Exo 2', sans-serif;
 $josefin: 'Josefin Slab', serif;
 
-@import "http://fonts.googleapis.com/css?family=Lobster:300,700.css";
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
-@import "http://fonts.googleapis.com/css?family=Bree+Serif:100,300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Lato:300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Play:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Exo+2:400,100.css";
-@import "http://fonts.googleapis.com/css?family=Josefin+Slab:400.css";
+@import "http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css";
 
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
 
 body {
-  // background-image: url('/images/layout/washi/washi.png');
-  // background-repeat: repeat; 
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat; 
 
   @media #{$large-up} {
-  background-color: blue;
+  //background-color: blue;
   }
 
   @media #{$medium-only} {
-  background-color: yellow;
+  //background-color: yellow;
   }
 
   @media #{$small-only} {
-  background-color: pink; 
+  //background-color: pink; 
   }
 }
 
 body #page_header .title {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: $font-bold;
   color: black;
   font-family: $oleo;
   text-align: center;
   @media #{$large-up} {
     padding-top: 25px;
-  }  
+  }
+  @media #{$medium-only} {
+    padding-bottom: 25px;
+  }
+  @media #{$small-only} {
+    padding-bottom: 18px;
+  }
 }
 
 div#blog_main {
@@ -92,7 +95,7 @@ div#blog_main {
         margin-top: -25px;
         margin-bottom: -5px;
         font-family: $josefin;
-        font-weight: $font-bold;
+        font-weight: $font-semibold;
       }
       p.tag{
         //background-color: green;
@@ -122,13 +125,13 @@ div.orbit-bullets-container {
   // background-color: blue;
   position: absolute;
   bottom: 0;
-  // margin: 0 auto;
   width: 100%;
   padding-bottom: 0;
+  margin-left: 10px;
   
   ol.orbit-bullets {
     // background-color: green;
-    margin: 0 auto 7px auto;
+    margin: 0 auto 5px auto;
     li{
       border-radius: 0;
       width: 22px;
