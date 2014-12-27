@@ -1,7 +1,6 @@
 extends ./layout.jade
 
 
-
 block link
   a.new_post(href="/new_blog") NEW BLOG
 
@@ -41,3 +40,10 @@ block slider
       li(data-orbit-slide-number="2")
       li(data-orbit-slide-number="3")
       li(data-orbit-slide-number="4")
+
+  
+  each blog in blogs
+    p
+      a(href='/blog/'+blog.id) 
+        =blog.title 
+
