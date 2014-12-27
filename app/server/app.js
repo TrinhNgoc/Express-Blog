@@ -49,6 +49,8 @@ app.get('/blog/:id', function (req, res) {
       author: blog.author,
       title: blog.title,
       body: blog.body.split(/\r?\n\r?\n/g)
+      // body: blog.body
+
     };
     res.render('./single_blog', locals);
   });
@@ -77,9 +79,8 @@ app.get('/blog/:id/edit', function (req, res) {
 
 //Submit a new blog
 app.post('/blog', function (req, res) {
-
   var new_post = new Post(req.body);
-  new_post.save(function (err, image) {
+    new_post.save(function (err, image) {
     if(err) {
       throw err;
     }
