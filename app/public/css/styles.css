@@ -3,7 +3,6 @@
 @import url(http://fonts.googleapis.com/css?family=Play:400,700.css);
 @import url(http://fonts.googleapis.com/css?family=Exo+2:400,100.css);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css);
-
 meta.foundation-version {
   font-family: "/5.5.0/"; }
 
@@ -20,7 +19,7 @@ meta.foundation-mq-medium {
   width: 40.063em; }
 
 meta.foundation-mq-medium-only {
-  font-family: "/only screen and (min-width:40.063em) and (max-width:64em)/";
+  font-family: "/only screen and (min-width:40.063em) and (max-width:60.5rem)/";
   width: 40.063em; }
 
 meta.foundation-mq-large {
@@ -2947,7 +2946,6 @@ label.error {
         width: auto;
         margin: auto;
         float: none; } }
-
   @media only screen and (min-width:60.5625rem) {
     .icon-bar.large-vertical {
       height: 100%;
@@ -3000,7 +2998,6 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.three-up.medium-vertical .item {
     width: auto; } }
-
 @media only screen and (min-width:60.5625rem) {
   .icon-bar.three-up.large-vertical .item {
     width: auto; } }
@@ -3011,7 +3008,6 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.four-up.medium-vertical .item {
     width: auto; } }
-
 @media only screen and (min-width:60.5625rem) {
   .icon-bar.four-up.large-vertical .item {
     width: auto; } }
@@ -3022,7 +3018,6 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.five-up.medium-vertical .item {
     width: auto; } }
-
 @media only screen and (min-width:60.5625rem) {
   .icon-bar.five-up.large-vertical .item {
     width: auto; } }
@@ -6029,33 +6024,36 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
-body {
-  background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat;
-  background-color: none; }
-
-div.new_post {
-  text-align: center; }
-  div.new_post form#new_post {
+a.new_post {
+  display: block;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700; }
+  a.new_post form#new_post {
     display: inline-block;
     margin: 0px auto; }
-    div.new_post form#new_post input {
+    a.new_post form#new_post input {
       width: 300px; }
-    div.new_post form#new_post label.form_labels {
+    a.new_post form#new_post label.form_labels {
       display: block; }
-    div.new_post form#new_post textarea#form_body {
+    a.new_post form#new_post textarea#form_body {
       display: block;
       width: 600px;
       height: 600px;
       vertical-align: top;
       font-size: 15px; }
 
+body {
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat; }
+
 body #page_header .title {
   font-size: 40px;
   font-weight: 700;
-  color: black;
   font-family: 'Oleo Script', cursive;
   text-align: center; }
+  body #page_header .title a {
+    color: black; }
   @media only screen and (min-width:60.5625rem) {
     body #page_header .title {
       padding-top: 25px; } }
@@ -6097,7 +6095,6 @@ div#blog_main div.orbit-caption {
     font-size: 13px;
     margin-bottom: 25px; }
   div#blog_main div.orbit-caption h3 {
-    font-family: 'Lato', sans-serif;
     color: white;
     margin-top: -25px;
     margin-bottom: -5px;
@@ -6111,10 +6108,8 @@ div#blog_main div.orbit-caption {
     font-size: 11px; }
   div#blog_main div.orbit-caption a.button {
     background-color: #FD234D;
-    padding-top: 7px;
+    padding-top: 10px;
     padding-bottom: 10px;
-    font-family: 'Lato', sans-serif;
-    margin: 0 0;
     border-radius: 2px;
     width: 140px; }
 

@@ -5,38 +5,21 @@ block link
   a.new_post(href="/new_blog") NEW BLOG
 
 block slider
-  div.orbit-container
-    ul(data-orbit, class="orbit-slides-container example-orbit", style="height: 460px;")
-      li
-        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 1")
-        div.orbit-caption
-          | Caption One
-      li
-        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 2")
-        div.orbit-caption
-          | Caption Two
-      li 
-        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 3")
-        div.orbit-caption
-          | Caption Three
-      li 
-        img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 4")
-        div.orbit-caption
-          | Caption Four
-    a(href"#", class="orbit-prev")
-      span
-    a(href"#", class="orbit-next")
-      span
-  div.orbit-bullets-container
-    ol.orbit-bullets
-      li(data-orbit-slide-number="1")
-      li(data-orbit-slide-number="2")
-      li(data-orbit-slide-number="3")
-      li(data-orbit-slide-number="4")
-
-  
-  each blog in blogs
-    p
-      a(href='/blog/'+blog.id) 
-        =blog.title
+  div#blog_main
+    div.blog_content
+      ul.example-orbit(data-orbit, data-options="slide_number: false")
+        each blog in blogs
+          li
+            div.image-pic
+              img(src="/images/ChristmasGiftbag.jpg", class="hide-for-small-only", alt="slide 1")
+              img(src="/images/ChristmasPicture.png", class="main-img show-for-small-only", alt="slide 1")
+            div.orbit-caption
+              p
+                | December 26, 2014 
+              h3
+                =blog.title  
+              p.show-for-large-up.tag
+                =blog.body
+              a(href="/blog/"+blog.id, class="show-for-large-up button")
+                | Read more
  
