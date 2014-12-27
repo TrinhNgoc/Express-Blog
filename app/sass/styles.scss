@@ -65,18 +65,20 @@ div#blog_main {
     max-width: 900px;
     margin: 50px auto;
     display: block;
+
     @media #{$large-up} {
       height: 450px;
       width: 730px;
+      margin-bottom: 100px;
     }
     @media #{$medium-only} {
       max-width: 460px;
+      padding-bottom: 10px;
       }
     @media #{$small-only} {
       height: 200px;
       width: 320px;
-      // padding-bottom: 175px;
-      // padding-top: 50px;
+      padding-bottom: 220px;
       }
     }//end of .blog_content
     div.orbit-caption {

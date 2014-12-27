@@ -6051,14 +6051,17 @@ div#blog_main div.blog_content {
   @media only screen and (min-width:60.5625rem) {
     div#blog_main div.blog_content {
       height: 450px;
-      width: 730px; } }
+      width: 730px;
+      margin-bottom: 100px; } }
   @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
     div#blog_main div.blog_content {
-      max-width: 460px; } }
+      max-width: 460px;
+      padding-bottom: 10px; } }
   @media only screen and (max-width: 40em) {
     div#blog_main div.blog_content {
       height: 200px;
-      width: 320px; } }
+      width: 320px;
+      padding-bottom: 220px; } }
 div#blog_main div.orbit-caption {
   font-family: 'Lato', sans-serif; }
   div#blog_main div.orbit-caption p {
