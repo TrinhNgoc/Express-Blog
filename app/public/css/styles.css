@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700.css);
+@import url(http://fonts.googleapis.com/css?family=Play:400,700.css);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100.css);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css);
+
 meta.foundation-version {
   font-family: "/5.5.0/"; }
 
@@ -18,12 +24,12 @@ meta.foundation-mq-medium-only {
   width: 40.063em; }
 
 meta.foundation-mq-large {
-  font-family: "/only screen and (min-width:64.063em)/";
-  width: 64.063em; }
+  font-family: "/only screen and (min-width:60.5625rem)/";
+  width: 60.5625rem; }
 
 meta.foundation-mq-large-only {
-  font-family: "/only screen and (min-width:64.063em) and (max-width:90em)/";
-  width: 64.063em; }
+  font-family: "/only screen and (min-width:60.5625rem) and (max-width:90em)/";
+  width: 60.5625rem; }
 
 meta.foundation-mq-xlarge {
   font-family: "/only screen and (min-width:90.063em)/";
@@ -56,7 +62,7 @@ body {
   color: #222;
   padding: 0;
   margin: 0;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
@@ -756,7 +762,7 @@ select {
     left: auto; }
  }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .large-push-0 {
     position: relative;
     left: 0%;
@@ -1130,7 +1136,7 @@ select {
       color: #222222;
       padding: 1rem;
       display: block;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 1rem; }
       .accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
         background: #e3e3e3; }
@@ -1405,7 +1411,7 @@ select {
       clear: both; }
  }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .large-block-grid-1 > li {
     width: 100%;
     list-style: none; }
@@ -1559,7 +1565,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -2790,7 +2796,7 @@ select {
   border-color: #cccccc;
   padding: 0.5rem;
   font-size: 0.875rem;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.75);
   line-height: normal;
   border-radius: 0;
@@ -2941,7 +2947,8 @@ label.error {
         width: auto;
         margin: auto;
         float: none; } }
-  @media only screen and (min-width:64.063em) {
+
+  @media only screen and (min-width:60.5625rem) {
     .icon-bar.large-vertical {
       height: 100%;
       width: auto; }
@@ -2983,7 +2990,7 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.two-up.medium-vertical .item {
     width: auto; } }
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .icon-bar.two-up.large-vertical .item {
     width: auto; } }
 .icon-bar.three-up .item {
@@ -2993,7 +3000,8 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.three-up.medium-vertical .item {
     width: auto; } }
-@media only screen and (min-width:64.063em) {
+
+@media only screen and (min-width:60.5625rem) {
   .icon-bar.three-up.large-vertical .item {
     width: auto; } }
 .icon-bar.four-up .item {
@@ -3003,7 +3011,8 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.four-up.medium-vertical .item {
     width: auto; } }
-@media only screen and (min-width:64.063em) {
+
+@media only screen and (min-width:60.5625rem) {
   .icon-bar.four-up.large-vertical .item {
     width: auto; } }
 .icon-bar.five-up .item {
@@ -3013,7 +3022,8 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.five-up.medium-vertical .item {
     width: auto; } }
-@media only screen and (min-width:64.063em) {
+
+@media only screen and (min-width:60.5625rem) {
   .icon-bar.five-up.large-vertical .item {
     width: auto; } }
 .icon-bar.six-up .item {
@@ -3023,7 +3033,7 @@ label.error {
 @media only screen and (min-width:40.063em) {
   .icon-bar.six-up.medium-vertical .item {
     width: auto; } }
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .icon-bar.six-up.large-vertical .item {
     width: auto; } }
 
@@ -3207,7 +3217,7 @@ label.error {
 
 .label {
   font-weight: normal;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -3481,12 +3491,6 @@ label.error {
 
   .orbit-timer {
     display: none; }
-
-  .orbit-next, .orbit-prev {
-    display: none; }
-
-  .orbit-bullets {
-    display: none; }
  }
 
 ul.pagination {
@@ -3594,7 +3598,7 @@ ul.pagination {
     color: #EEEEEE;
     font-weight: normal;
     font-size: 1rem;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+    font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
   .pricing-table .price {
     background-color: #F6F6F6;
     padding: 0.9375rem 1.25rem;
@@ -3602,7 +3606,7 @@ ul.pagination {
     color: #333333;
     font-weight: normal;
     font-size: 2rem;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+    font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
   .pricing-table .description {
     background-color: #FFFFFF;
     padding: 0.9375rem;
@@ -3875,7 +3879,7 @@ dialog {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: outside;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
   .side-nav li {
     margin: 0 0 0.4375rem 0;
     font-size: 0.875rem;
@@ -3891,7 +3895,7 @@ dialog {
     .side-nav li.active > a:first-child:not(.button) {
       color: #1cc7ff;
       font-weight: normal;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+      font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
     .side-nav li.divider {
       border-top: 1px solid;
       height: 0;
@@ -3999,7 +4003,7 @@ dialog {
     display: inline;
     margin-left: 1rem;
     margin-bottom: 0;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-weight: normal;
     font-size: 0.875rem;
     color: #999999; }
@@ -4172,7 +4176,7 @@ table {
       background-color: #EFEFEF;
       color: #222222;
       padding: 1rem 2rem;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 1rem; }
       .tabs dd > a:hover, .tabs .tab-title > a:hover {
         background-color: #e1e1e1; }
@@ -4473,7 +4477,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       padding: 12px 0 12px 0;
       padding-left: 0.9375rem;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 0.8125rem;
       font-weight: normal;
       text-transform: none; }
@@ -4860,7 +4864,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important; }
  }
 
-@media only screen and (min-width:40.063em) and (max-width:64em) {
+@media only screen and (min-width:40.063em) and (max-width:60.5rem) {
   .medium-only-text-left {
     text-align: left !important; }
 
@@ -4888,7 +4892,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important; }
  }
 
-@media only screen and (min-width:64.063em) and (max-width:90em) {
+@media only screen and (min-width:60.5625rem) and (max-width:90em) {
   .large-only-text-left {
     text-align: left !important; }
 
@@ -4902,7 +4906,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important; }
  }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .large-text-left {
     text-align: left !important; }
 
@@ -5005,7 +5009,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #222222;
@@ -5764,7 +5768,7 @@ ul.off-canvas-list {
  }
 
 /* large displays */
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width:60.5625rem) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .show-for-large-only, .show-for-large-up, .show-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xlarge, .show-for-xlarge-down, .hide-for-xxlarge-only, .hide-for-xxlarge-up, .hide-for-xxlarge, .show-for-xxlarge-down {
     display: inherit !important; }
 
@@ -6026,6 +6030,8 @@ th.hide-for-touch {
  }
 
 body {
+  background-image: url('/images/layout/washi/washi.png');
+  background-repeat: repeat;
   background-color: none; }
 
 div.new_post {
@@ -6043,3 +6049,149 @@ div.new_post {
       height: 600px;
       vertical-align: top;
       font-size: 15px; }
+
+body #page_header .title {
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+  font-family: 'Oleo Script', cursive;
+  text-align: center; }
+  @media only screen and (min-width:60.5625rem) {
+    body #page_header .title {
+      padding-top: 25px; } }
+  @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
+    body #page_header .title {
+      padding-bottom: 25px; } }
+  @media only screen and (max-width: 40em) {
+    body #page_header .title {
+      padding-bottom: 18px; } }
+
+div#blog_main div.blog_content {
+  max-width: 900px;
+  margin: 50px auto;
+  display: block; }
+  @media only screen and (min-width:60.5625rem) {
+    div#blog_main div.blog_content {
+      height: 450px;
+      width: 730px;
+      margin-bottom: 100px; } }
+  @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
+    div#blog_main div.blog_content {
+      max-width: 460px;
+      padding-bottom: 10px; } }
+  @media only screen and (max-width: 40em) {
+    div#blog_main div.blog_content {
+      height: 200px;
+      width: 320px;
+      padding-bottom: 220px; }
+      div#blog_main div.blog_content div.image-pic img {
+        width: 525px;
+        height: 200px; } }
+div#blog_main div.orbit-caption {
+  font-family: 'Lato', sans-serif; }
+  div#blog_main div.orbit-caption p {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-bottom: 25px; }
+  div#blog_main div.orbit-caption h3 {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin-top: -25px;
+    margin-bottom: -5px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600; }
+  div#blog_main div.orbit-caption p.tag {
+    padding-left: -25px;
+    margin-bottom: 10px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 100;
+    font-size: 11px; }
+  div#blog_main div.orbit-caption a.button {
+    background-color: #FD234D;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    margin: 0 0;
+    border-radius: 2px;
+    width: 140px; }
+
+div.orbit-bullets-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0;
+  margin-left: 10px; }
+  div.orbit-bullets-container ol.orbit-bullets {
+    margin: 0 auto 5px auto; }
+    div.orbit-bullets-container ol.orbit-bullets li {
+      border-radius: 0;
+      width: 22px;
+      height: 6px; }
+      div.orbit-bullets-container ol.orbit-bullets li.active {
+        background-color: #FD234D; }
+
+div.orbit-container {
+  position: relative; }
+  div.orbit-container ul.orbit-slides-container {
+    list-style: none; }
+
+div.orbit-timer {
+  left: -10000px;
+  top: auto;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px; }
+
+div.orbit-container a.orbit-prev {
+  top: 1%;
+  background-color: #989C88;
+  margin-top: 1px;
+  margin-left: 4px;
+  border-radius: 5px; }
+  div.orbit-container a.orbit-prev span {
+    color: white;
+    border: none;
+    font-size: 25px;
+    text-indent: 0;
+    margin-top: -25px;
+    font-family: 'Play', sans-serif;
+    margin-left: 5px; }
+    div.orbit-container a.orbit-prev span:before {
+      content: "<"; }
+
+div.orbit-container a.orbit-next {
+  top: 1%;
+  background-color: #989C88;
+  padding-left: 30px;
+  margin-top: 1px;
+  margin-left: 4px;
+  border-radius: 5px; }
+  div.orbit-container a.orbit-next span {
+    color: white;
+    border: none;
+    font-size: 25px;
+    text-indent: 0;
+    margin-top: -25px;
+    font-family: 'Play', sans-serif; }
+    div.orbit-container a.orbit-next span:before {
+      content: ">"; }
+
+a.orbit-prev {
+  width: 28px !important;
+  height: 42px !important;
+  margin-right: 665px; }
+
+a.orbit-next {
+  width: 30px !important;
+  height: 42px !important;
+  margin-right: 665px; }
+  @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
+    a.orbit-next {
+      margin-right: 395px; } }
+  @media only screen and (max-width: 40em) {
+    a.orbit-next {
+      margin-right: 255px; } }
