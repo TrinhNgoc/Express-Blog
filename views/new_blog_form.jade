@@ -4,7 +4,7 @@ extends ./layout.jade
 
 block new_post_form
   div.new_post
-    form#new_post(action='/blog' method='post')
+    form#new_post(action='/blog' method='POST')
       label.form_labels(for="form_author") Author
       input#form_author(type='text' name="author")
       label.form_labels(for="form_title") Title

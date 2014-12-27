@@ -3,7 +3,8 @@ extends ./layout.jade
 
 block edit_post_form
   div.edit_post
-    form#edit_post(action='' method='')
+    form#edit_post(action='/blog/'+id+'?_method=PUT' method='POST')
+      input(type="hidden" name="_method" value="PUT")
       label.form_labels(for="form_author") Author
       input#form_author(type='text' name="author" value=author)
       label.form_labels(for="form_title") Title

@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var app = express();
 var mongoose = require('mongoose');
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
@@ -8,6 +9,7 @@ var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mon
 app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 mongoose.connect(CONNECTION_STRING);
 
@@ -34,13 +36,15 @@ app.get('/', function (req, res) {
     var locals = {
       blogs: blogposts
     }
+    console.log(locals);
     res.render("./index", locals);
   });
 });
 
 //View Single Blog post
-app.get('/blog/:id', function (req, res) {
-  Post.findById(req.params.id.substring(1), function (err, blog) {
+app.get('/blog/id', function (req, res) {
+  console.log(req.params.id);
+  Post.findById(req.params.id, function (err, blog) {
     if(err) {
       return console.log(err);
     }
@@ -61,8 +65,8 @@ app.get('/new_blog', function (req, res) {
 });
 
 //Render Edit Blog Form
-app.get('/blog/:id/edit', function (req, res) {
-  Post.findById(req.params.id.substring(1), function (err, blog) {
+app.get('/blog/id/edit', function (req, res) {
+  Post.findById(req.params.id, function (err, blog) {
     if(err) {
       return console.log(err);
     }
@@ -89,6 +93,23 @@ app.post('/blog', function (req, res) {
 
 })
 
+//Update Blog
+app.put("/blog/id", function (req, res) {
+  var blogpost = {
+    $set: { 
+      title: req.body.title,
+      author: req.body.author,
+      body: req.body.body
+    }
+  };
+  console.log(req.params.id);
+  Post.findByIdAndUpdate(req.params.id, blogpost , function (err, post) {
+    if(err) {
+      return console.log(err);
+    }
+    res.redirect(302, '/blog/:id');
+  });
+});
 
 
 
