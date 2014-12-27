@@ -118,16 +118,31 @@ div#blog_main {
 //   height: 250px;
 // }
 
-ol.orbit-bullets li{
-  border-radius: 0;
-  width: 20px;
-  &.active {
-    background-color: #FD234D;
+div.orbit-bullets-container {
+  // background-color: blue;
+  position: absolute;
+  bottom: 5px;
+  margin: 0 auto;
+  width: 100%;
+
+  ol.orbit-bullets {
+    // background-color: green;
+    
+    li{
+      border-radius: 0;
+      width: 20px;
+      &.active {
+        background-color: #FD234D;
+      }
+    }
   }
 }
 
-div.orbit-container ul.orbit-slides-container {
-  list-style: none;
+div.orbit-container {
+  position: relative;
+  ul.orbit-slides-container {
+    list-style: none;
+  }
 }
 
 div.orbit-timer {
@@ -193,6 +208,9 @@ a.orbit-next {
   margin-right: 665px;
   @media #{$medium-only} {
     margin-right: 395px;
+  }
+  @media #{$small-only} {
+    margin-right: 255px;
   }
 }
 

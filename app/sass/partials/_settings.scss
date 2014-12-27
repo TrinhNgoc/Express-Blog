@@ -905,8 +905,8 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // $orbit-slide-number-padding: rem-calc(5);
 
 // Hide controls on small
-// $orbit-nav-hide-for-small: true;
-// $orbit-bullet-hide-for-small: true;
+$orbit-nav-hide-for-small: false;
+$orbit-bullet-hide-for-small: false;
 // $orbit-timer-hide-for-small: true;
 
 // Graceful Loading Wrapper and preloader
