@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
     var locals = {
       blogs: blogposts
     }
-    res.render("./index", locals);
+    res.render('./index', locals);
   });
 });
 
@@ -59,7 +59,7 @@ app.get('/blog/:id', function (req, res) {
 
 //Render New Blog Form
 app.get('/new_blog', function (req, res) {
-  res.render("new_blog_form.jade");
+  res.render('new_blog_form.jade');
 });
 
 //Render Edit Blog Form
@@ -91,26 +91,33 @@ app.post('/blog', function (req, res) {
 
 })
 
-//Update Blog
-app.put("/blog/:id", function (req, res) {
+//Update Blog Post
+app.put('/blog/:id', function (req, res) {
   var blogpost = {
-    $set: { 
-      title: req.body.title,
-      author: req.body.author,
-      body: req.body.body
-    }
+    title: req.body.title,
+    author: req.body.author,
+    body: req.body.body
   };
 
-  console.log(req.params.id);
-  Post.findByIdAndUpdate(req.params.id, blogpost , function (err, post) {
+  Post.findByIdAndUpdate(req.params.id, blogpost , function (err, blogpost) {
     if(err) {
       return console.log(err);
     }
-    res.redirect('/blog/id');
+    res.redirect('/blog/'+req.params.id);
   });
-
-
 });
+
+//Delete Blog Post
+
+app.delete('/blog/:id', function (req, res) {
+  Post.findByIdAndRemove(req.params.id, function (err, blogpost) {
+    if(err) {
+      return console.log(err);
+    }
+    res.redirect('/');
+  })
+})
+
 
 
 
