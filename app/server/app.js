@@ -14,7 +14,6 @@ app.use(methodOverride('_method'));
 mongoose.connect(CONNECTION_STRING);
 
 // SCHEMAS
-
 var postSchema = mongoose.Schema({
   author: String,
   title: String,
@@ -23,7 +22,6 @@ var postSchema = mongoose.Schema({
 
 // MODELS
 var Post = mongoose.model('Post', postSchema);
-
 
 // ROUTES
 
@@ -56,7 +54,6 @@ app.get('/blog/:id', function (req, res) {
   });
 });
 
-
 //Render New Blog Form
 app.get('/new_blog', function (req, res) {
   res.render('new_blog_form.jade');
@@ -76,7 +73,7 @@ app.get('/blog/:id/edit', function (req, res) {
     }
     res.render('./edit_blog', locals);
   });
-})
+});
 
 //Submit a new blog
 app.post('/blog', function (req, res) {
@@ -87,9 +84,8 @@ app.post('/blog', function (req, res) {
       throw err;
     }
     res.redirect('/');
-  })
-
-})
+  });
+});
 
 //Update Blog Post
 app.put('/blog/:id', function (req, res) {
@@ -108,19 +104,14 @@ app.put('/blog/:id', function (req, res) {
 });
 
 //Delete Blog Post
-
 app.delete('/blog/:id', function (req, res) {
   Post.findByIdAndRemove(req.params.id, function (err, blogpost) {
     if(err) {
       return console.log(err);
     }
     res.redirect('/');
-  })
-})
-
-
-
-
+  });
+});
 
 module.exports.app = app;
 
