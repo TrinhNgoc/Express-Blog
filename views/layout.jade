@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name ="viewport" content="width=device-width, initial-scale=1.0" )
+  title 
+    block title
+     |Express Blog
+  script(src="/bower_components/modernizr/modernizr.js")
+  link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css') 
+  link(rel="stylesheet" href="/css/styles.css")
+
+body
+  header#page_header
+    div.title
+      a(href="/") Hooray
+
+  block link
+
+  block new_post_form
+
+  block slider
+
+  block edit_post_form
+
+  block single_blog_post
+
+  script(src="/bower_components/foundation/js/vendor/jquery.js")
+  script(src="/bower_components/foundation/js/foundation.min.js")
+  script $(document).foundation();
+  script(src="/js/blog.js")

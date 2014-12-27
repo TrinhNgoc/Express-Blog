@@ -1,51 +1,73 @@
 //find background images
 //find images
 //www.subtlepatterns.com
-
-//font weight
-$font-bold: 700;
-$font-semibold: 600;
-$font-light: 100;
-
-//colors
-$oleo: 'Oleo Script', cursive;
-$lato: 'Lato', sans-serif;
-$play: 'Play', sans-serif;
-$exo: 'Exo 2', sans-serif;
-$josefin: 'Josefin Slab', serif;
-
+@import "partials/settings";
+@import "../public/bower_components/foundation/scss/foundation.scss";
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Lato:300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Play:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Exo+2:400,100.css";
 @import "http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css";
 
-@import "partials/settings";
-@import "../public/bower_components/foundation/scss/foundation.scss";
+// font weight
+$font-bold: 700;
+$font-semibold: 600;
+$font-light: 100;
+
+// fonts
+$oleo: 'Oleo Script', cursive;
+$lato: 'Lato', sans-serif;
+$play: 'Play', sans-serif;
+$exo: 'Exo 2', sans-serif;
+$josefin: 'Josefin Slab', serif;
+
+
+
+a.new_post{
+
+  display: block;
+  text-align: center;
+  font-family: $lato;
+  font-weight: $font-bold;
+
+  form#new_post {
+
+    display: inline-block;
+    // background-color: red;
+    margin: 0px auto;
+
+    input {
+      width: 300px;
+    }
+
+    label.form_labels {
+      display: block;
+    }
+
+    textarea#form_body{
+      display: block;
+      width: 600px;
+      height: 600px;
+      vertical-align: top;
+      font-size: 15px;
+    }
+  }
+}
 
 body {
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat; 
-
-  @media #{$large-up} {
-  //background-color: blue;
-  }
-
-  @media #{$medium-only} {
-  //background-color: yellow;
-  }
-
-  @media #{$small-only} {
-  //background-color: pink; 
-  }
 }
 
 body #page_header .title {
   font-size: 40px;
   font-weight: $font-bold;
-  color: black;
+  // color: black;
   font-family: $oleo;
   text-align: center;
+  a {
+    color: black;
+  }
   @media #{$large-up} {
     padding-top: 25px;
   }
@@ -78,11 +100,7 @@ div#blog_main {
       width: 320px;
       padding-bottom: 220px;
       div.image-pic {
-        // width: 525px;
-        // height: 200px;
         img {
-          // width: 100%;
-          // height: auto;
           width: 525px;
           height: 200px;
         }
@@ -90,8 +108,6 @@ div#blog_main {
       // background-image: url('/images/ChristmasPicture.png');
     }
   }//end of .blog_content
-
-
     
   div.orbit-caption {
     font-family: $lato;
@@ -104,7 +120,6 @@ div#blog_main {
       margin-bottom: 25px;
     }
     h3 {
-      font-family: $lato;
       color: white;
       margin-top: -25px;
       margin-bottom: -5px;
@@ -121,10 +136,9 @@ div#blog_main {
     }
     a.button {
       background-color: #FD234D;
-      padding-top: 7px;
+      padding-top: 10px;
       padding-bottom: 10px;
-      font-family: $lato;
-      margin: 0 0;
+      // margin: 0 0;
       border-radius: 2px;
       width: 140px;
     }
@@ -227,8 +241,4 @@ a.orbit-next {
     margin-right: 255px;
   }
 }
-
-
-
-
 

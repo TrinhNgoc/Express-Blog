@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+
+block link
+  a.new_post(href="/new_blog") NEW BLOG
+
+block slider
+  div#blog_main
+    div.blog_content
+      ul.example-orbit(data-orbit, data-options="slide_number: false")
+        each blog in blogs
+          li
+            div.image-pic
+              img(src="/images/ChristmasGiftbag.jpg", class="hide-for-small-only", alt="slide 1")
+              img(src="/images/ChristmasPicture.png", class="main-img show-for-small-only", alt="slide 1")
+            div.orbit-caption
+              p
+                | December 26, 2014 
+              h3
+                =blog.title  
+              p.show-for-large-up.tag
+                =blog.body
+              a(href="/blog/"+blog.id, class="show-for-large-up button")
+                | Read more
+ 
