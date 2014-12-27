@@ -4,7 +4,6 @@
 @import url(http://fonts.googleapis.com/css?family=Exo+2:400,100.css);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300.css);
-
 meta.foundation-version {
   font-family: "/5.5.0/"; }
 
@@ -6533,7 +6532,6 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
-<<<<<<< HEAD
 div#single_blog div.small-9 {
   background-color: white; }
   div#single_blog div.small-9 div#title_area h3.title {
@@ -6558,8 +6556,6 @@ div#single_blog div.small-9 {
       font-size: 17px;
       font-family: 'Open Sans', sans-serif; }
 
-=======
->>>>>>> jenny_master
 div.new_post {
   text-align: center; }
   div.new_post form#new_post {
