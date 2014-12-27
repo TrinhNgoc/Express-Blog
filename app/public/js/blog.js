@@ -1,17 +1,6 @@
 $( function () {
 
 
-// View list of blog post
-// GET /
-  $.get('/', function (posts) {
-  }
-
-
-  function displayBlogPosts () {
-      
-
-
-  }
 
 // View a single blog post
 // Includes a link to delete
