@@ -100,13 +100,13 @@ app.put("/blog/:id", function (req, res) {
       body: req.body.body
     }
   };
-  
+
   console.log(req.params.id);
   Post.findByIdAndUpdate(req.params.id, blogpost , function (err, post) {
     if(err) {
-      // return console.log(err);
+      return console.log(err);
     }
-    res.redirect('/blog/:id');
+    res.redirect('/blog/id');
   });
 
 
