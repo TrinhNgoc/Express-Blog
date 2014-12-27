@@ -16,10 +16,10 @@
     <div class="blog_content">
      <ul class="example-orbit" data-orbit data-options="slide_number: false">
       <li>
-      <div class="image-pic">
-        <img src="/images/ChristmasGiftbag.jpg" class="hide-for-small-only" alt="slide 1" />
-        <img src="/images/ChristmasPicture.png" class="main-img show-for-small-only" alt="slide 1" />
-      </div>
+        <div class="image-pic">
+          <img src="/images/ChristmasGiftbag.jpg" class="hide-for-small-only" alt="slide 1" />
+          <img src="/images/ChristmasPicture.png" class="main-img show-for-small-only" alt="slide 1" />
+        </div>
         <div class="orbit-caption">
           <p>October 12, 2013</p>
           <h3>Blog Sidebar left Post</h3>

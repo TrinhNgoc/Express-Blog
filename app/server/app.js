@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
     }
     var locals = {
       blogs: blogposts
-    }
+    };
     res.render('./index', locals);
   });
 });
