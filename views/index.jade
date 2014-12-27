@@ -6,7 +6,7 @@ block link
 
 block slider
   div.orbit-container
-    ul(data-orbit, class="orbit-slides-container", style="height: 460px;")
+    ul(data-orbit, class="orbit-slides-container example-orbit", style="height: 460px;")
       li
         img(src="http://img2.timeinc.net/people/i/2013/pets/news/131118/corgi-3-600.jpg", alt="slide 1")
         div.orbit-caption
@@ -27,13 +27,6 @@ block slider
       span
     a(href"#", class="orbit-next")
       span
-    div.orbit-timer
-      span
-      div.orbit-progress
-    div.orbit-slide-number
-      span 1
-      | of
-      span 4
   div.orbit-bullets-container
     ol.orbit-bullets
       li(data-orbit-slide-number="1")
@@ -45,5 +38,5 @@ block slider
   each blog in blogs
     p
       a(href='/blog/'+blog.id) 
-        =blog.title 
-
+        =blog.title
+ 
