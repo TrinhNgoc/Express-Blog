@@ -6025,52 +6025,14 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
-div#single_blog div.small-9 {
-  background-color: white; }
-  div#single_blog div.small-9 div#title_area h3.title {
-    font-family: 'Lato', sans-serif;
-    font-size: 40px; }
-  div#single_blog div.small-9 div#title_area p.author {
-    font-family: 'Lato', sans-serif;
-    font-size: 20px; }
-  div#single_blog div.small-9 div#button_area {
-    text-align: right; }
-    div#single_blog div.small-9 div#button_area form {
-      display: inline-block;
-      margin-top: 30px; }
-      div#single_blog div.small-9 div#button_area form#delete_link {
-        margin-left: 10px; }
-      div#single_blog div.small-9 div#button_area form button {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300; }
-  div#single_blog div.small-9 div.post_area {
-    margin-top: 20px; }
-    div#single_blog div.small-9 div.post_area p.paragraph {
-      font-size: 17px;
-      font-family: 'Open Sans', sans-serif; }
-
-a.new_post {
-  display: block;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700; }
-  a.new_post form#new_post {
-    display: inline-block;
-    margin: 0px auto; }
-    a.new_post form#new_post input {
-      width: 300px; }
-    a.new_post form#new_post label.form_labels {
-      display: block; }
-    a.new_post form#new_post textarea#form_body {
-      display: block;
-      width: 600px;
-      height: 600px;
-      vertical-align: top;
-      font-size: 15px; }
-
 body {
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat; }
+  body a.new_post {
+    display: block;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; }
 
 body #page_header .title {
   font-size: 40px;
@@ -6133,12 +6095,6 @@ div#blog_main div.orbit-caption {
     margin-bottom: -5px;
     font-family: 'Josefin Slab', serif;
     font-weight: 600; }
-  div#blog_main div.orbit-caption p.tag {
-    padding-left: -25px;
-    margin-bottom: 10px;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 100;
-    font-size: 11px; }
   div#blog_main div.orbit-caption a.button {
     background-color: #FD234D;
     padding-top: 10px;
@@ -6152,8 +6108,6 @@ div.orbit-bullets-container {
   left: 23%;
   bottom: 5px;
   width: 50%;
-  bottom: 0;
-  width: 100%;
   padding-bottom: 0;
   margin-left: 10px; }
   div.orbit-bullets-container ol.orbit-bullets {

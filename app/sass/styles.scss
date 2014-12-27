@@ -27,6 +27,12 @@ $opensans: 'Open Sans', sans-serif;
 body {
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat; 
+  a.new_post {
+    display: block;
+    text-align: center;
+    font-family: $lato;
+    font-weight: $font-bold;
+  }
 }
 
 body #page_header .title {
