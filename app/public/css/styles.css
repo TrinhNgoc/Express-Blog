@@ -6094,14 +6094,17 @@ div#blog_main div.orbit-caption {
 
 div.orbit-bullets-container {
   position: absolute;
-  bottom: 5px;
-  margin: 0 auto;
-  width: 100%; }
-  div.orbit-bullets-container ol.orbit-bullets li {
-    border-radius: 0;
-    width: 20px; }
-    div.orbit-bullets-container ol.orbit-bullets li.active {
-      background-color: #FD234D; }
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0; }
+  div.orbit-bullets-container ol.orbit-bullets {
+    margin: 0 auto 7px auto; }
+    div.orbit-bullets-container ol.orbit-bullets li {
+      border-radius: 0;
+      width: 22px;
+      height: 6px; }
+      div.orbit-bullets-container ol.orbit-bullets li.active {
+        background-color: #FD234D; }
 
 div.orbit-container {
   position: relative; }
