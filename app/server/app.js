@@ -36,14 +36,12 @@ app.get('/', function (req, res) {
     var locals = {
       blogs: blogposts
     }
-    console.log(locals);
     res.render("./index", locals);
   });
 });
 
 //View Single Blog post
-app.get('/blog/id', function (req, res) {
-  console.log(req.params.id);
+app.get('/blog/:id', function (req, res) {
   Post.findById(req.params.id, function (err, blog) {
     if(err) {
       return console.log(err);
@@ -65,7 +63,7 @@ app.get('/new_blog', function (req, res) {
 });
 
 //Render Edit Blog Form
-app.get('/blog/id/edit', function (req, res) {
+app.get('/blog/:id/edit', function (req, res) {
   Post.findById(req.params.id, function (err, blog) {
     if(err) {
       return console.log(err);
@@ -94,7 +92,7 @@ app.post('/blog', function (req, res) {
 })
 
 //Update Blog
-app.put("/blog/id", function (req, res) {
+app.put("/blog/:id", function (req, res) {
   var blogpost = {
     $set: { 
       title: req.body.title,
@@ -102,13 +100,16 @@ app.put("/blog/id", function (req, res) {
       body: req.body.body
     }
   };
+  
   console.log(req.params.id);
   Post.findByIdAndUpdate(req.params.id, blogpost , function (err, post) {
     if(err) {
-      return console.log(err);
+      // return console.log(err);
     }
-    res.redirect(302, '/blog/:id');
+    res.redirect('/blog/:id');
   });
+
+
 });
 
 
