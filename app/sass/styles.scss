@@ -23,95 +23,7 @@ $exo: 'Exo 2', sans-serif;
 $josefin: 'Josefin Slab', serif;
 $opensans: 'Open Sans', sans-serif;
 
-//Styles for Single Blog Post Page
-
-div#single_blog{
-
-   // background-color: white;
-  
-  div.small-9 {
-    background-color: white;
-
-    div#title_area {
-
-      h3.title {
-        font-family: $lato;
-        font-size: 40px;
-      }
-
-      p.author {
-        font-family: $lato;
-        font-size: 20px;
-      }
-
-    }
-    
-    div#button_area {
-      text-align: right;
-
-      form {
-        display: inline-block;
-        margin-top: 30px;
-        // margin-left: 40px;  
-
-        &#delete_link {
-          margin-left: 10px;
-        }
-
-        button {
-          font-family: $opensans; 
-          font-weight: 300; 
-        }
-
-      }
-    }
-
-    div.post_area {
-
-      margin-top: 20px; 
-
-      p.paragraph {
-        font-size: 17px;
-        font-family: $opensans;
-      }
-    }
-
-  }
-}
-
-
-//Styles for New_Post Page
-a.new_post{
-
-  display: block;
-  text-align: center;
-  font-family: $lato;
-  font-weight: $font-bold;
-
-  form#new_post {
-
-    display: inline-block;
-    // background-color: red;
-    margin: 0px auto;
-
-    input {
-      width: 300px;
-    }
-
-    label.form_labels {
-      display: block;
-    }
-
-    textarea#form_body{
-      display: block;
-      width: 600px;
-      height: 600px;
-      vertical-align: top;
-      font-size: 15px;
-    }
-  }
-}
-
+//Styles for Home Page
 body {
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat; 
@@ -306,3 +218,79 @@ a.orbit-next {
   }
 }
 
+
+//Styles for Single Blog Post Page
+
+div#single_blog{
+
+   // background-color: white;
+  
+  div.small-9 {
+    background-color: white;
+
+    div#title_area {
+
+      h3.title {
+        font-family: $lato;
+        font-size: 40px;
+      }
+
+      p.author {
+        font-family: $lato;
+        font-size: 20px;
+      }
+
+    }
+    
+    div#button_area {
+      text-align: right;
+
+      form {
+        display: inline-block;
+        margin-top: 30px;
+        // margin-left: 40px;  
+
+        &#delete_link {
+          margin-left: 10px;
+        }
+
+        button {
+          font-family: $opensans; 
+          font-weight: 300; 
+        }
+
+      }
+    }
+
+    div.post_area {
+
+      margin-top: 20px; 
+
+      p.paragraph {
+        font-size: 17px;
+        font-family: $opensans;
+      }
+    }
+
+  }
+}
+
+//Styles for New_Post and Edit Post Pages
+div.new_post, div.edit_post{
+
+  display: block;
+
+  form#new_post, form#edit_post {
+    width: 100%;
+
+    label.form_labels {
+      font-family: $lato;
+      font-size: 25px
+    }
+
+    input, textarea#form_body, button{
+      font-family: $opensans;
+      font-size: 20px;
+    }
+  }
+}
