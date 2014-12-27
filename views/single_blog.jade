@@ -1,20 +1,33 @@
 extends ./layout.jade
 
 
+
+
 block single_blog_post
 
-  p Title: 
-    =title
+  div#single_blog
+    div.row
+      div.small-9.small-centered.columns
+        div.row
+          div.small-5.columns
+            div#title_area
+              h3.title 
+                =title
+              p.author by 
+                =author
+          div.small-7.columns
+            div#button_area
+              form#edit_link(action='/blog/'+id+'/edit' method='GET')
+                button(type='submit') Edit Post
 
-  p Author: 
-    =author
+              form#delete_link(action='/blog/'+id+'?_method=DELETE' method='POST')
+                input(type='hidden' name='_method' value='DELETE')
+                button(type='submit') Delete Post
+    div.row
+      div.small-9.small-centered.columns
+        div.post_area
+          each paragraph in body
+            p.paragraph
+              =paragraph
+            
 
-  p Post:
-    =body
-
-  form#edit_link(action='/blog/'+id+'/edit' method='GET')
-    button(type='submit') Edit Post
-
-  form#delete_link(action='/blog/'+id+'?_method=DELETE' method='POST')
-    input(type='hidden' name='_method' value='DELETE')
-    button(type='submit') Delete Post
