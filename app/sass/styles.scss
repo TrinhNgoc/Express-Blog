@@ -17,12 +17,14 @@ $lato: 'Lato', sans-serif;
 $play: 'Play', sans-serif;
 $exo: 'Exo 2', sans-serif;
 $josefin: 'Josefin Slab', serif;
+$opensans: 'Open Sans', sans-serif;
 
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Lato:300,400,700.css";
 @import "http://fonts.googleapis.com/css?family=Play:400,700.css";
 @import "http://fonts.googleapis.com/css?family=Exo+2:400,100.css";
 @import "http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300.css";
 
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
@@ -34,28 +36,56 @@ $josefin: 'Josefin Slab', serif;
 
 div#single_blog{
 
-  // background-color: red;
-
-
-  div.post {
-    margin-bottom: 20px;
-  }
-
+   // background-color: white;
   
-  form {
-    display: inline-block;
+  div.small-9 {
+    background-color: white;
 
-    &#delete_link {
-      margin-left: 10px;
+    div#title_area {
+
+      h3.title {
+        font-family: $lato;
+        font-size: 40px;
+      }
+
+      p.author {
+        font-family: $lato;
+        font-size: 20px;
+      }
+
+    }
+    
+    div#button_area {
+      text-align: right;
+
+      form {
+        display: inline-block;
+        margin-top: 30px;
+        // margin-left: 40px;  
+
+        &#delete_link {
+          margin-left: 10px;
+        }
+
+        button {
+          font-family: $opensans; 
+          font-weight: 300; 
+        }
+
+      }
     }
 
-    button {
-      // font-family: sans-serif;  
+    div.post_area {
+
+      margin-top: 20px; 
+
+      p.paragraph {
+        font-size: 17px;
+        font-family: $opensans;
+      }
     }
 
   }
-
-
 }
 
 
