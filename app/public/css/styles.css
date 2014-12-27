@@ -6061,7 +6061,10 @@ div#blog_main div.blog_content {
     div#blog_main div.blog_content {
       height: 200px;
       width: 320px;
-      padding-bottom: 220px; } }
+      padding-bottom: 220px; }
+      div#blog_main div.blog_content div.image-pic img {
+        width: 525px;
+        height: 200px; } }
 div#blog_main div.orbit-caption {
   font-family: 'Lato', sans-serif; }
   div#blog_main div.orbit-caption p {

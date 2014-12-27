@@ -58,9 +58,7 @@ body #page_header .title {
 }
 
 div#blog_main {
-  @media #{$medium-up} {
-    // padding: 80px;
-  }
+  
   div.blog_content { 
     max-width: 900px;
     margin: 50px auto;
@@ -73,55 +71,65 @@ div#blog_main {
     }
     @media #{$medium-only} {
       max-width: 460px;
-      padding-bottom: 10px;
-      }
+      padding-bottom: 10px;      
+    }
     @media #{$small-only} {
       height: 200px;
       width: 320px;
       padding-bottom: 220px;
+      div.image-pic {
+        // width: 525px;
+        // height: 200px;
+        img {
+          // width: 100%;
+          // height: auto;
+          width: 525px;
+          height: 200px;
+        }
       }
-    }//end of .blog_content
-    div.orbit-caption {
-      font-family: $lato;
-      p {
-        font-family: $exo;
-        font-weight: $font-light;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 13px;
-        margin-bottom: 25px;
-      }
-      h3 {
-        font-family: $lato;
-        color: white;
-        margin-top: -25px;
-        margin-bottom: -5px;
-        font-family: $josefin;
-        font-weight: $font-semibold;
-      }
-      p.tag{
-        //background-color: green;
-        padding-left: -25px;
-        margin-bottom: 10px;
-        font-family: $exo;
-        font-weight: $font-light;
-        font-size: 11px;
-      }
-      a.button {
-        background-color: #FD234D;
-        padding-top: 7px;
-        padding-bottom: 10px;
-        font-family: $lato;
-        margin: 0 0;
-        border-radius: 2px;
-        width: 140px;
-      }
+      // background-image: url('/images/ChristmasPicture.png');
     }
-  }//end of #blog_main
+  }//end of .blog_content
 
-// ul.example-orbit.orbit-slides-container {
-//   height: 250px;
-// }
+
+    
+  div.orbit-caption {
+    font-family: $lato;
+    p {
+      font-family: $exo;
+      font-weight: $font-light;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+    h3 {
+      font-family: $lato;
+      color: white;
+      margin-top: -25px;
+      margin-bottom: -5px;
+      font-family: $josefin;
+      font-weight: $font-semibold;
+    }
+    p.tag{
+      //background-color: green;
+      padding-left: -25px;
+      margin-bottom: 10px;
+      font-family: $exo;
+      font-weight: $font-light;
+      font-size: 11px;
+    }
+    a.button {
+      background-color: #FD234D;
+      padding-top: 7px;
+      padding-bottom: 10px;
+      font-family: $lato;
+      margin: 0 0;
+      border-radius: 2px;
+      width: 140px;
+    }
+  }
+}//end of #blog_main
 
 div.orbit-bullets-container {
   // background-color: blue;
@@ -167,7 +175,7 @@ div.orbit-container a.orbit-prev {
   margin-top: 1px;
   margin-left: 4px;
   border-radius: 5px;
-  // content: url("/images/arrow-left-white.png");
+  
     span {
     color: white;
     border: none;
@@ -175,7 +183,6 @@ div.orbit-container a.orbit-prev {
     text-indent: 0;
     margin-top: -25px;
     font-family: $play;
-    // font-weight: 400;
     margin-left: 5px;
     &:before {
       content: "<";
