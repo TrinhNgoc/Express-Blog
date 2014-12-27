@@ -6119,18 +6119,20 @@ div#blog_main div.orbit-caption {
     letter-spacing: 1px;
     font-size: 13px;
     margin-bottom: 25px; }
+  div#blog_main div.orbit-caption p.tag {
+    padding-left: -25px;
+    margin-bottom: 10px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+    max-height: 20px;
+    overflow: hidden; }
   div#blog_main div.orbit-caption h3 {
     color: white;
     margin-top: -25px;
     margin-bottom: -5px;
     font-family: 'Josefin Slab', serif;
     font-weight: 600; }
-  div#blog_main div.orbit-caption p.tag {
-    padding-left: -25px;
-    margin-bottom: 10px;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 100;
-    font-size: 11px; }
   div#blog_main div.orbit-caption a.button {
     background-color: #FD234D;
     padding-top: 10px;
@@ -6177,11 +6179,12 @@ div.orbit-container a.orbit-prev {
   div.orbit-container a.orbit-prev span {
     color: white;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     text-indent: 0;
     margin-top: -25px;
-    font-family: 'Play', sans-serif;
-    margin-left: 5px; }
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-left: 9px; }
     div.orbit-container a.orbit-prev span:before {
       content: "<"; }
 
@@ -6195,22 +6198,23 @@ div.orbit-container a.orbit-next {
   div.orbit-container a.orbit-next span {
     color: white;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     text-indent: 0;
     margin-top: -25px;
-    font-family: 'Play', sans-serif; }
+    margin-left: -6px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; }
     div.orbit-container a.orbit-next span:before {
       content: ">"; }
 
 a.orbit-prev {
-  width: 28px !important;
-  height: 42px !important;
-  margin-right: 665px; }
+  width: 30px !important;
+  height: 30px !important; }
 
 a.orbit-next {
   width: 30px !important;
-  height: 42px !important;
-  margin-right: 665px; }
+  height: 30px !important;
+  margin-right: 664px; }
   @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
     a.orbit-next {
       margin-right: 395px; } }

@@ -177,13 +177,6 @@ div#blog_main {
       font-size: 13px;
       margin-bottom: 25px;
     }
-    h3 {
-      color: white;
-      margin-top: -25px;
-      margin-bottom: -5px;
-      font-family: $josefin;
-      font-weight: $font-semibold;
-    }
     p.tag{
       //background-color: green;
       padding-left: -25px;
@@ -191,6 +184,15 @@ div#blog_main {
       font-family: $exo;
       font-weight: $font-light;
       font-size: 11px;
+      max-height: 20px;
+      overflow: hidden;
+    }
+    h3 {
+      color: white;
+      margin-top: -25px;
+      margin-bottom: -5px;
+      font-family: $josefin;
+      font-weight: $font-semibold;
     }
     a.button {
       background-color: #FD234D;
@@ -252,11 +254,12 @@ div.orbit-container a.orbit-prev {
     span {
     color: white;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     text-indent: 0;
     margin-top: -25px;
-    font-family: $play;
-    margin-left: 5px;
+    font-family: $lato;
+    font-weight: $font-bold;
+    margin-left: 9px;
     &:before {
       content: "<";
     }
@@ -273,10 +276,12 @@ div.orbit-container a.orbit-next {
     span {
     color: white;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     text-indent: 0;
     margin-top: -25px;
-    font-family: $play;
+    margin-left: -6px;
+    font-family: $lato;
+    font-weight: $font-bold;
     &:before {
       content: ">";
     }
@@ -284,15 +289,15 @@ div.orbit-container a.orbit-next {
 }
 
 a.orbit-prev {
-  width: 28px !important;
-  height: 42px !important;
-  margin-right: 665px;
+  width: 30px !important;
+  height: 30px !important;
+  // margin-right: 665px;
 }
 
 a.orbit-next {
   width: 30px !important;
-  height: 42px !important;
-  margin-right: 665px;
+  height: 30px !important;
+  margin-right: 664px;
   @media #{$medium-only} {
     margin-right: 395px;
   }
