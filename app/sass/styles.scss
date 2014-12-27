@@ -196,7 +196,7 @@ div#blog_main {
       background-color: #FD234D;
       padding-top: 10px;
       padding-bottom: 10px;
-      // margin: 0 0;
+      margin: 0 0;
       border-radius: 2px;
       width: 140px;
     }
@@ -206,8 +206,9 @@ div#blog_main {
 div.orbit-bullets-container {
   // background-color: blue;
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  left: 23%;
+  bottom: 5px;
+  width: 50%;
   padding-bottom: 0;
   margin-left: 10px;
   
