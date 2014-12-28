@@ -34,7 +34,7 @@ passport.use(new LocalStrategy({
       if (!user) {
         return done(null, false, { message: 'Incorrect email.' });
       }
-      if (password !== user.password) {
+      if (encryptPassword(password) !== user.password) {
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, user);
@@ -43,7 +43,7 @@ passport.use(new LocalStrategy({
 ));
 
 passport.serializeUser(function(user, done) {
-  console.log("serialize", user);
+  // console.log("serialize", user);
   done(null, user);
 });
 
@@ -83,7 +83,7 @@ app.post('/login',
 );
 
 app.get('/login', function (req, res) {
-  console.log(req.user);
+  // console.log(req.user);
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
@@ -99,16 +99,12 @@ app.get('/signup', function (req, res) {
 });
 
 app.post('/signup', function (req, res) {
-  var salt = "allwedoiswin";
-  var shasum = crypto.createHash('sha512');
-  shasum.update ( req.body.password + salt );
-  var input_result = shasum.digest('hex');
 
   var new_user = new User({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
-    password: input_result
+    password: encryptPassword(req.body.password)
   });
     new_user.save(function (err, user) {
       if (err) {
@@ -210,13 +206,22 @@ app.delete('/blog/:id', ensureAuthenticated, function (req, res) {
 
 //FUNCTIONS
 function ensureAuthenticated (req, res, next) {
-  console.log(req.isAuthenticated());
-  console.log(req.user);
+  // console.log(req.isAuthenticated());
+  // console.log(req.user);
   if (req.isAuthenticated() ){
     return next();
   }
   //not authenticated
   res.redirect('/login');
+}
+
+function encryptPassword (password) {
+  var salt = "allwedoiswin";
+  var shasum = crypto.createHash('sha512');
+
+  shasum.update ( password + salt );
+
+  return shasum.digest('hex');
 }
 
 //FAKE USER
