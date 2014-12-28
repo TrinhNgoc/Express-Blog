@@ -97,6 +97,8 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
+// EDIT ACCOUNT ROUTES
+
 app.post('/signup', function (req, res) {
   var new_user = new User({
     firstname: req.body.firstname,
@@ -110,6 +112,27 @@ app.post('/signup', function (req, res) {
       }
       res.redirect('/login');
     });
+});
+
+  // Post.findById(req.params.id, function (err, blog) {
+  //   if(err) {
+  //     return console.log(err);
+  //   }
+  //   var locals = {
+  //     id: blog._id,
+  //     author: blog.author,
+  //     title: blog.title,
+  //     body: blog.body
+  //   };
+  //   res.render('./edit_blog', locals);
+  // });
+
+// DASHBOARD ROUTES
+app.get('/dashboard', ensureAuthenticated, function (req, res) {
+  res.render('dashboard.jade');
+});
+app.get('/dashboard/edit_account', function (req, res) {
+  res.render('edit_account');
 });
 
 // BLOG ROUTES
