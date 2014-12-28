@@ -282,14 +282,14 @@ div#single_blog{
 }
 
 //Styles for New_Post and Edit Post Pages
-div.new_post, div.edit_post{
+div.new_post, div.edit_post, div#login_form{
 
   display: block;
 
-  form#new_post, form#edit_post {
+  form{
     width: 100%;
 
-    label.form_labels {
+    label{
       font-family: $lato;
       font-size: 25px
     }
