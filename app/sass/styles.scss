@@ -32,6 +32,7 @@ body {
     text-align: center;
     font-family: $lato;
     font-weight: $font-bold;
+    // background-color: green;
   }
 }
 
@@ -44,6 +45,15 @@ body #page_header .title {
   a {
     color: black;
   }
+    a#logout_link {
+      // background-color: red;
+      display: block;
+      font-size: 20px;
+      text-align: right;
+      margin-right: 20px;
+      font-family: $opensans;
+      color: #008CBA;
+    }
   @media #{$large-up} {
     padding-top: 25px;
   }
@@ -282,7 +292,7 @@ div#single_blog{
 }
 
 //Styles for New_Post and Edit Post Pages
-div.new_post, div.edit_post, div#signup_form{
+div.new_post, div.edit_post, div#signup_form, div#login_form{
 
   display: block;
 

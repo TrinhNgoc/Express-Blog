@@ -6041,6 +6041,13 @@ body #page_header .title {
   text-align: center; }
   body #page_header .title a {
     color: black; }
+  body #page_header .title a#logout_link {
+    display: block;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #008CBA; }
   @media only screen and (min-width:60.5625rem) {
     body #page_header .title {
       padding-top: 25px; } }
@@ -6208,7 +6215,7 @@ div#single_blog div.small-9 {
       font-size: 17px;
       font-family: 'Open Sans', sans-serif; }
 
-div.new_post, div.edit_post, div#signup_form {
+div.new_post, div.edit_post, div#signup_form, div#login_form {
   display: block; }
   div.new_post form, div.edit_post form, div#signup_form form {
     width: 100%; }
