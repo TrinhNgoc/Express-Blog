@@ -80,13 +80,25 @@ app.get('/login', function (req, res) {
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
-app.get('/signup', function (req, res) {
-  res.render('signup');
-});
 
 app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
+});
+
+// SIGNUP ROUTES
+app.get('/signup', function (req, res) {
+  res.render('signup');
+});
+
+app.post('/signup', function (req, res) {
+  var new_user = new Users({username: req.body.username, password: req.body.password});
+    new_user.save(function (err, user) {
+      if (err) {
+        throw err;
+      }
+      res.redirect('/login');
+    });
 });
 
 // BLOG ROUTES
