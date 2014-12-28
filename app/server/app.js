@@ -80,6 +80,10 @@ app.get('/login', function (req, res) {
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
+app.get('/signup', function (req, res) {
+  res.render('signup');
+});
+
 app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
