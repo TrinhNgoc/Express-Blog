@@ -6208,13 +6208,13 @@ div#single_blog div.small-9 {
       font-size: 17px;
       font-family: 'Open Sans', sans-serif; }
 
-div.new_post, div.edit_post {
+div.new_post, div.edit_post, div#login_form {
   display: block; }
-  div.new_post form#new_post, div.new_post form#edit_post, div.edit_post form#new_post, div.edit_post form#edit_post {
+  div.new_post form, div.edit_post form, div#login_form form {
     width: 100%; }
-    div.new_post form#new_post label.form_labels, div.new_post form#edit_post label.form_labels, div.edit_post form#new_post label.form_labels, div.edit_post form#edit_post label.form_labels {
+    div.new_post form label, div.edit_post form label, div#login_form form label {
       font-family: 'Lato', sans-serif;
       font-size: 25px; }
-    div.new_post form#new_post input, div.new_post form#new_post textarea#form_body, div.new_post form#new_post button, div.new_post form#edit_post input, div.new_post form#edit_post textarea#form_body, div.new_post form#edit_post button, div.edit_post form#new_post input, div.edit_post form#new_post textarea#form_body, div.edit_post form#new_post button, div.edit_post form#edit_post input, div.edit_post form#edit_post textarea#form_body, div.edit_post form#edit_post button {
+    div.new_post form input, div.new_post form textarea#form_body, div.new_post form button, div.edit_post form input, div.edit_post form textarea#form_body, div.edit_post form button, div#login_form form input, div#login_form form textarea#form_body, div#login_form form button {
       font-family: 'Open Sans', sans-serif;
       font-size: 20px; }
