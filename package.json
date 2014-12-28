@@ -19,6 +19,7 @@
     "express": "~4.10.6",
     "express-partials": "^0.3.0",
     "express-session": "^1.9.3",
+    "i": "^0.3.2",
     "jade": "^1.8.2",
     "method-override": "^2.3.0",
     "mongoose": "^3.8.21",
