@@ -58,8 +58,14 @@ var postSchema = mongoose.Schema({
   body: String
 });
 
+var userSchema = mongoose.Schema({
+  username: String,
+  password: String
+})
+
 // MODELS
 var Post = mongoose.model('Post', postSchema);
+var Users = mongoose.model('Users', userSchema);
 
 // ROUTES
 
