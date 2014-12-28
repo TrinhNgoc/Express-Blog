@@ -7,8 +7,16 @@ block signup_form
         form(action='/signup', method='post')
           div
             label
-              | Username:
-            input(type='text', name='username')
+              | First Name:
+            input(type='text', name='firstname')
+          div
+            label
+              | Last Name:
+            input(type='text', name='lastname')
+          div
+            label
+              | Email:
+            input(type='text', name='email')
           div
             label
               | Password:

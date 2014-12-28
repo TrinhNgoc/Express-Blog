@@ -23,14 +23,17 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+  },
+  function(email, password, done) {
+    User.findOne({ email: email }, function(err, user) {
       if (err) { return done(err); }
       if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
+        return done(null, false, { message: 'Incorrect email.' });
       }
-      if (!user.validPassword(password)) {
+      if (password !== user.password) {
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, user);
@@ -44,7 +47,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
-  User.findOne({id: user.id}, function(err, user) {
+  User.findById(user._id, function(err, user) {
     done(null, user);
   });
 });
@@ -59,13 +62,15 @@ var postSchema = mongoose.Schema({
 });
 
 var userSchema = mongoose.Schema({
-  username: String,
+  firstname: String,
+  lastname: String,
+  email: String,
   password: String
-})
+});
 
 // MODELS
 var Post = mongoose.model('Post', postSchema);
-var Users = mongoose.model('Users', userSchema);
+var User = mongoose.model('User', userSchema);
 
 // ROUTES
 
@@ -77,6 +82,7 @@ app.post('/login',
 );
 
 app.get('/login', function (req, res) {
+  console.log(req.user);
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
@@ -92,7 +98,12 @@ app.get('/signup', function (req, res) {
 });
 
 app.post('/signup', function (req, res) {
-  var new_user = new Users({username: req.body.username, password: req.body.password});
+  var new_user = new User({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    password: req.body.password
+  });
     new_user.save(function (err, user) {
       if (err) {
         throw err;
@@ -203,20 +214,20 @@ function ensureAuthenticated (req, res, next) {
 }
 
 //FAKE USER
-var User = {
-  findOne : function (opts, cb){
+// var User = {
+//   findOne : function (opts, cb){
     
-    var user = {
-      id: 1, 
-      username: "jon",
-      password: "winners",
-      validPassword: function (password) {
-        return (password === "winners");
-      }
-    };
-    cb (null, user);
-  }
-};
+//     var user = {
+//       id: 1, 
+//       username: "jon",
+//       password: "winners",
+//       validPassword: function (password) {
+//         return (password === "winners");
+//       }
+//     };
+//     cb (null, user);
+//   }
+// };
 
 
 module.exports.app = app;
