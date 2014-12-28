@@ -1,35 +1,42 @@
 doctype html
 html(lang="en")
-head
-  meta(charset="UTF-8")
-  meta(name ="viewport" content="width=device-width, initial-scale=1.0" )
-  title 
-    block title
-     |Express Blog
-  script(src="/bower_components/modernizr/modernizr.js")
-  link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css') 
-  link(rel="stylesheet" href="/css/styles.css")
+  head
+    meta(charset="UTF-8")
+    meta(name ="viewport" content="width=device-width, initial-scale=1.0" )
+    title 
+      block title
+       |Express Blog
+    script(src="/bower_components/modernizr/modernizr.js")
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css') 
+    link(rel="stylesheet" href="/css/styles.css")
 
-body
-  header#page_header
-    div.title
-      a#logout_link(href="/logout") Logout
-      a(href="/signup") Sign Up
-      a(href="/") Hooray
+  body
+    header#page_header
+      include _nav_bar.jade
+      div.title
+        a#logout_link(href="/logout") Logout
+        a(href="/signup") Sign Up
+        a(href="/") Hooray
+      a(href="/dashboard") Dashboard
 
-  block login
+    block login
 
-  block link
+    block link
 
-  block new_post_form
+    block new_post_form
 
-  block slider
+    block slider
 
-  block edit_post_form
+    block edit_post_form
 
-  block signup_form
+    block signup_form
 
-  block single_blog_post
+    block single_blog_post
+
+    block dashboard
+
+    block edit_account
+
 
   script(src="/bower_components/foundation/js/vendor/jquery.js")
   script(src="/bower_components/foundation/js/foundation.min.js")

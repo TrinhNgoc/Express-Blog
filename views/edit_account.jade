@@ -1,0 +1,20 @@
+extends ./layout.jade
+
+block edit_account
+ div#edit_account_form
+  div.row
+    div.small-9.small-centered.columns
+      form(action='/dashboard/edit_account', method='post')
+        label
+          | First Name:
+        input(type='text', name='firstname', value=firstname)
+        label
+          | Last Name:
+        input(type='text', name='lastname', value=lastname)
+        label
+          | Email:
+        input(type='text', name='email', value=email)
+        label
+          | Password:
+        input(type='password', name='password')
+        button(type='submit') Save Changes

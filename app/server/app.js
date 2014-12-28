@@ -97,6 +97,8 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
+// EDIT ACCOUNT ROUTES
+
 app.post('/signup', function (req, res) {
   var new_user = new User({
     firstname: req.body.firstname,
@@ -111,6 +113,32 @@ app.post('/signup', function (req, res) {
       res.redirect('/login');
     });
 });
+
+// DASHBOARD ROUTES
+// Load Dashboard Page
+app.get('/dashboard', ensureAuthenticated, function (req, res) {
+  res.render('dashboard.jade');
+});
+
+// Load edit account page
+app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
+  User.findOne({ email: req.user.email}, function (err, user) {
+    if(err) {
+      console.log(err);
+      return 404;
+    }
+    var locals = {
+      firstname: user.firstname,
+      lastname: user.lastname,
+      email: user.email
+    };
+    console.log(locals);
+    res.render('edit_account', locals);
+  });
+});
+
+// Update User Information
+
 
 // BLOG ROUTES
 //Render all blog posts

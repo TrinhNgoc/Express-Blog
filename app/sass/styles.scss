@@ -1,6 +1,8 @@
 //find background images
 //find images
 //www.subtlepatterns.com
+// @import "foundation/components/button-groups";
+
 @import "partials/settings";
 @import "../public/bower_components/foundation/scss/foundation.scss";
 @import "http://fonts.googleapis.com/css?family=Oleo+Script:400,700.css";
@@ -64,6 +66,14 @@ body #page_header .title {
     padding-bottom: 18px;
   }
 }
+
+// .custom-button-group-class {
+//   @include button-group-container();
+//   .custom-button-class {
+//     @include button();
+//   }
+//   & > li { @include button-group-style(); }
+// }
 
 div#blog_main {
   
@@ -292,7 +302,7 @@ div#single_blog{
 }
 
 //Styles for New_Post and Edit Post Pages
-div.new_post, div.edit_post, div#signup_form, div#login_form{
+div.new_post, div.edit_post, div#signup_form, div#login_form, div#edit_account_form{
 
   display: block;
 
