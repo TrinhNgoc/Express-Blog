@@ -114,26 +114,31 @@ app.post('/signup', function (req, res) {
     });
 });
 
-  // Post.findById(req.params.id, function (err, blog) {
-  //   if(err) {
-  //     return console.log(err);
-  //   }
-  //   var locals = {
-  //     id: blog._id,
-  //     author: blog.author,
-  //     title: blog.title,
-  //     body: blog.body
-  //   };
-  //   res.render('./edit_blog', locals);
-  // });
-
 // DASHBOARD ROUTES
+// Load Dashboard Page
 app.get('/dashboard', ensureAuthenticated, function (req, res) {
   res.render('dashboard.jade');
 });
-app.get('/dashboard/edit_account', function (req, res) {
-  res.render('edit_account');
+
+// Load edit account page
+app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
+  User.findOne({ email: req.user.email}, function (err, user) {
+    if(err) {
+      console.log(err);
+      return 404;
+    }
+    var locals = {
+      firstname: user.firstname,
+      lastname: user.lastname,
+      email: user.email
+    };
+    console.log(locals);
+    res.render('edit_account', locals);
+  });
 });
+
+// Update User Information
+
 
 // BLOG ROUTES
 //Render all blog posts
