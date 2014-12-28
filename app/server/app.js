@@ -5,6 +5,7 @@ var flash = require ('connect-flash');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var methodOverride = require('method-override');
+var crypto = require('crypto');
 var app = express();
 var mongoose = require('mongoose');
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
@@ -98,11 +99,16 @@ app.get('/signup', function (req, res) {
 });
 
 app.post('/signup', function (req, res) {
+  var salt = "allwedoiswin";
+  var shasum = crypto.createHash('sha512');
+  shasum.update ( req.body.password + salt );
+  var input_result = shasum.digest('hex');
+
   var new_user = new User({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
-    password: req.body.password
+    password: input_result
   });
     new_user.save(function (err, user) {
       if (err) {
