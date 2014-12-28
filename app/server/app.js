@@ -104,7 +104,7 @@ app.post('/signup', function (req, res) {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
-    password: encryptPassword(req.body.password)
+    password: encryptPassword(req.body.password),
   });
     new_user.save(function (err, user) {
       if (err) {
@@ -213,7 +213,7 @@ function ensureAuthenticated (req, res, next) {
   }
   //not authenticated
   res.redirect('/login');
-}
+};
 
 function encryptPassword (password) {
   var salt = "allwedoiswin";
@@ -222,7 +222,8 @@ function encryptPassword (password) {
   shasum.update ( password + salt );
 
   return shasum.digest('hex');
-}
+};
+
 
 //FAKE USER
 // var User = {
