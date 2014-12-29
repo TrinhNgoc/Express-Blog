@@ -6230,9 +6230,11 @@ div#single_blog div.small-9 {
 
 div.new_post, div.edit_post, div#signup_form, div#login_form, div#edit_account_form {
   display: block; }
+  div.new_post div.row, div.edit_post div.row, div#signup_form div.row, div#login_form div.row, div#edit_account_form div.row {
+    padding-top: 75px; }
   div.new_post form, div.edit_post form, div#signup_form form, div#login_form form, div#edit_account_form form {
     width: 100%;
-    padding-top: 75px; }
+    padding-top: 15px; }
     div.new_post form label, div.edit_post form label, div#signup_form form label, div#login_form form label, div#edit_account_form form label {
       font-family: 'Lato', sans-serif;
       font-size: 25px; }
