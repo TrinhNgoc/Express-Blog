@@ -12,11 +12,11 @@ html(lang="en")
 
   body
     header#page_header
-      include _nav_bar.jade
       div.title
         //- a#logout_link(href="/logout") Logout
         //- a(href="/signup") Sign Up
         a(href="/") Hooray
+      include _nav_bar.jade
       //- a(href="/dashboard") My Account
 
     block login
