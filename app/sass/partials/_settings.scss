@@ -469,11 +469,11 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // 06. Button Groups
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-html-button-classes: $include-html-classes;
+// $include-html-button-classes: $include-html-classes;
 
-//Sets the margin for the right side by default, and the left margin if right-to-left direction is used
-$button-bar-margin-opposite: rem-calc(10);
-$button-group-border-width: 1px;
+// //Sets the margin for the right side by default, and the left margin if right-to-left direction is used
+// $button-bar-margin-opposite: rem-calc(10);
+// $button-group-border-width: 1px;
 
 // 07. Clearing
 // - - - - - - - - - - - - - - - - - - - - - - - - -

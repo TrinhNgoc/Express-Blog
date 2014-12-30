@@ -6034,24 +6034,11 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 700; }
 
-ul.button-groups {
-  position: absolute;
-  padding-left: 234px; }
-  @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
-    ul.button-groups {
-      margin-left: 5px; } }
-  ul.button-groups li {
-    display: inline-block;
-    position: relative; }
-  ul.button-groups a.button {
-    font-family: 'Lato', sans-serif; }
-
 body #page_header .title {
   font-size: 40px;
   font-weight: 700;
   font-family: 'Oleo Script', cursive;
-  text-align: center;
-  padding-bottom: 25px; }
+  text-align: center; }
   body #page_header .title a {
     color: black; }
   body #page_header .title a#logout_link {
@@ -6063,13 +6050,14 @@ body #page_header .title {
     color: #008CBA; }
   @media only screen and (min-width:60.5625rem) {
     body #page_header .title {
-      padding-top: 25px; } }
+      padding-top: 40px; } }
   @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
     body #page_header .title {
-      padding-bottom: 25px; } }
+      padding-bottom: 5px;
+      padding-top: 50px; } }
   @media only screen and (max-width: 40em) {
     body #page_header .title {
-      padding-bottom: 18px; } }
+      padding-top: 25px; } }
 
 div#blog_main div.blog_content {
   max-width: 900px;
@@ -6078,8 +6066,7 @@ div#blog_main div.blog_content {
   @media only screen and (min-width:60.5625rem) {
     div#blog_main div.blog_content {
       height: 450px;
-      width: 730px;
-      margin-bottom: 100px; } }
+      width: 730px; } }
   @media only screen and (min-width:40.063em) and (max-width:60.5rem) {
     div#blog_main div.blog_content {
       max-width: 460px;
@@ -6231,7 +6218,7 @@ div#single_blog div.small-9 {
 div.new_post, div.edit_post, div#signup_form, div#login_form, div#edit_account_form {
   display: block; }
   div.new_post div.row, div.edit_post div.row, div#signup_form div.row, div#login_form div.row, div#edit_account_form div.row {
-    padding-top: 75px; }
+    padding-top: 25px; }
   div.new_post form, div.edit_post form, div#signup_form form, div#login_form form, div#edit_account_form form {
     width: 100%;
     padding-top: 15px; }
