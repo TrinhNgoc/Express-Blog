@@ -4473,7 +4473,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       padding: 12px 0 12px 0;
       padding-left: 0.9375rem;
-      font-family: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-family: Lato;
       font-size: 0.8125rem;
       font-weight: normal;
       text-transform: none; }
@@ -4565,7 +4565,7 @@ meta.foundation-mq-topbar {
           color: #FFFFFF; }
     .top-bar-section ul li:hover:not(.has-form) > a {
       background-color: #555555;
-      background: #333333;
+      background: #FD234D;
       color: #FFFFFF; }
     .top-bar-section ul li.active > a {
       background: #008CBA;
@@ -4688,7 +4688,7 @@ meta.foundation-mq-topbar {
           display: none; }
     .top-bar-section li.hover > a:not(.button) {
       background-color: #555555;
-      background: #333333;
+      background: #FD234D;
       color: #FFFFFF; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 0.9375rem;
@@ -4696,7 +4696,7 @@ meta.foundation-mq-topbar {
       background: #333333; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #555555;
-        background: #333333; }
+        background: #FD234D; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       padding: 0 0.9375rem;
       line-height: 2.8125rem;
@@ -4797,7 +4797,7 @@ meta.foundation-mq-topbar {
 
   .no-js .top-bar-section ul li:hover > a {
     background-color: #555555;
-    background: #333333;
+    background: #FD234D;
     color: #FFFFFF; }
   .no-js .top-bar-section ul li:active > a {
     background: #008CBA;
@@ -6033,6 +6033,9 @@ body {
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 700; }
+
+section.top-bar-section ul.right li.active {
+  background-color: #FD234D; }
 
 body #page_header .title {
   font-size: 40px;

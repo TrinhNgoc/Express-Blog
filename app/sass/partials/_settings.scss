@@ -88,9 +88,9 @@ $row-width: rem-calc(1150);
 
 // We use these to define default font stacks
 $font-family-sans-serif: "Josefin Slab", "Exo 2", "Play", "Oleo Script", "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-lato: Lato;
 // We use these to define default font weights
 // $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
@@ -1359,7 +1359,7 @@ $orbit-bullet-hide-for-small: false;
 // 34. Top Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-top-bar-classes: $include-html-classes;
+$include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
 // $topbar-bg-color: $dark-gray;
@@ -1392,10 +1392,10 @@ $orbit-bullet-hide-for-small: false;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
-// $topbar-link-bg-hover: #272727;
+$topbar-link-bg-hover: #FD234D;
 // $topbar-link-bg-active: $dark-gray;
 // $topbar-link-bg-active-hover: $dark-gray;
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: $font-family-lato;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
 // $topbar-back-link-size: $h5-font-size;
