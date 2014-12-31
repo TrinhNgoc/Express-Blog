@@ -134,13 +134,26 @@ app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
       lastname: user.lastname,
       email: user.email
     };
-    console.log(locals);
     res.render('edit_account', locals);
   });
 });
 
 // Update User Information
+app.post('/dashboard/edit_account', function (req, res) {
 
+  var updated_user = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email
+  }
+
+  User.findOneAndUpdate({email: req.user.email}, updated_user, function (err, user) {
+    if(err) {
+      return console.log(err);
+    }
+    res.redirect('/dashboard/edit_account');
+  });
+});
 
 // BLOG ROUTES
 //Render all blog posts
