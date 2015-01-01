@@ -1,6 +1,7 @@
 //find background images
 //find images
 //www.subtlepatterns.com
+
 // @import "foundation/components/button-groups";
 
 @import "partials/settings";
@@ -38,10 +39,22 @@ body {
   }
 }
 
+section.top-bar-section {
+  ul.right {
+    li{
+      // border-radius: 0;
+      // width: 2px;
+      // height: 6px;
+      &.active {
+        background-color: #FD234D;
+      }
+    }
+  }
+}
+
 body #page_header .title {
   font-size: 40px;
   font-weight: $font-bold;
-  // color: black;
   font-family: $oleo;
   text-align: center;
   a {
@@ -57,23 +70,16 @@ body #page_header .title {
       color: #008CBA;
     }
   @media #{$large-up} {
-    padding-top: 25px;
+    padding-top: 40px;
   }
   @media #{$medium-only} {
-    padding-bottom: 25px;
+    padding-bottom: 5px;
+    padding-top: 50px;
   }
   @media #{$small-only} {
-    padding-bottom: 18px;
+    padding-top: 25px;
   }
 }
-
-// .custom-button-group-class {
-//   @include button-group-container();
-//   .custom-button-class {
-//     @include button();
-//   }
-//   & > li { @include button-group-style(); }
-// }
 
 div#blog_main {
   
@@ -85,7 +91,6 @@ div#blog_main {
     @media #{$large-up} {
       height: 450px;
       width: 730px;
-      margin-bottom: 100px;
     }
     @media #{$medium-only} {
       max-width: 460px;
@@ -187,8 +192,7 @@ div.orbit-container a.orbit-prev {
   background-color: #989C88;
   margin-top: 1px;
   margin-left: 4px;
-  border-radius: 5px;
-  
+  border-radius: 5px;  
     span {
     color: white;
     border: none;
@@ -304,10 +308,14 @@ div#single_blog{
 //Styles for New_Post and Edit Post Pages
 div.new_post, div.edit_post, div#signup_form, div#login_form, div#edit_account_form{
 
+  div.row {
+    padding-top: 25px;
+  }
   display: block;
 
   form{
     width: 100%;
+    padding-top: 15px;
 
     label{
       font-family: $lato;

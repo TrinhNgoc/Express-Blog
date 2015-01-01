@@ -1,8 +1,32 @@
- 
-ul.button-group
-  li
-    a.button(href="#") Button 1
-  li
-    a.button(href="#") Button 2
-  li
-    a.button(href="#") Button 3
+nav.top-bar(data-topbar, role="navigation")
+  ul.title-area
+    li.name
+      h1
+        a(href="/")
+          | Home
+    li.toggle-topbar.menu-icon
+      a(href="#")
+        span
+          | Menu
+  section.top-bar-section
+    ul.right
+      //- li.active
+      //-   a(href="#")
+      //-     | Right Button Active
+      li
+        a(href="/signup")
+          | Sign Up
+      li
+        a(href="/login")
+          | Log In
+      li.has-dropdown
+        a(href="/dashboard")
+          | My Account
+        ul.dropdown
+          li
+            a(href="/logout")
+              | Log Out
+    ul.left
+      li
+        a(href="new_blog")
+          | New Blog        
