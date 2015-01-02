@@ -76,11 +76,39 @@ var User = mongoose.model('User', userSchema);
 // ROUTES
 
 // LOGIN ROUTES
-app.post('/login',
-  passport.authenticate('local', { successRedirect: '/new_blog',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
-);
+// app.post('/login',
+//   passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), function (req, res) {
+//     res.redirect('back');
+//   }  
+// );
+
+app.post('/login', function(req, res, next){
+  passport.authenticate('local', function(err, user, info){
+    // This is the default destination upon successful login.
+    var redirectUrl = '/';
+
+    if (err) { 
+      return next(err);
+    }
+
+    if (!user) { 
+      req.flash("user not found");
+      return res.redirect('/login');
+    }
+
+    // If we have previously stored a redirectUrl, use that, 
+    // otherwise, use the default.
+    if (req.session.redirectUrl) {
+      redirectUrl = req.session.redirectUrl;
+      req.session.redirectUrl = null;
+    }
+    req.logIn(user, function(err){
+      if (err) { return next(err); }
+    });
+    res.redirect(redirectUrl);
+  })(req, res, next);
+});
+
 
 app.get('/login', function (req, res) {
   // console.log(req.user);
@@ -247,12 +275,16 @@ app.delete('/blog/:id', ensureAuthenticated, function (req, res) {
 
 //FUNCTIONS
 function ensureAuthenticated (req, res, next) {
-  // console.log(req.isAuthenticated());
-  // console.log(req.user);
   if (req.isAuthenticated() ){
     return next();
   }
+
+  //store the url they're coming from
+  req.session.redirectUrl = req.url;
+
+
   //not authenticated
+  req.flash("warn", "You must be logged-in to do that.");
   res.redirect('/login');
 };
 
