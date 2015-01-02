@@ -5,13 +5,27 @@ block edit_account
   div.row
     div.small-9.small-centered.columns
       form(action='/dashboard/edit_account', method='post')
-        label
-          | First Name:
-        input(type='text', name='firstname', value=firstname)
-        label
-          | Last Name:
-        input(type='text', name='lastname', value=lastname)
-        label
-          | Email:
-        input(type='text', name='email', value=email)
-        button(type='submit') Save Changes
+        div
+          label
+            | First Name:
+          input(type='text', name='firstname', value=firstname)
+        div
+          label
+            | Last Name:
+          input(type='text', name='lastname', value=lastname)
+        div
+          label
+            | Email:
+          input(type='text', name='email', value=email)
+        div
+          label(for="password")
+            | Password:
+          input(type='password', name='password' id="password")
+        div
+          label(for="cpassword")
+            | Confirm Password:
+          input(type='password', name='cpassword', id="cpassword" onkeyup="checkPassword(); return false;")
+          span#confirmMessage
+        div
+          button(type='submit') Save Changes
+
