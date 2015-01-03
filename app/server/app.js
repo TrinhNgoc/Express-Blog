@@ -6,15 +6,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var methodOverride = require('method-override');
 var crypto = require('crypto');
-var app = express();
 var mongoose = require('mongoose');
+var app = express();
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
 
 // Middleware Area
 app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
 app.use(session({ 
-  secret: 'anime pregnancy test',
+  secret: 'blogify',
   resave: false,
   saveUninitialized: true
 }));
@@ -24,6 +24,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+mongoose.connect(CONNECTION_STRING);
+
+//Passport Area
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -33,9 +36,11 @@ passport.use(new LocalStrategy({
       if (err) { return done(err); }
       if (!user) {
         return done(null, false, { message: 'Incorrect email.' });
+
       }
       if (encryptPassword(password) !== user.password) {
         return done(null, false, { message: 'Incorrect password.' });
+
       }
       return done(null, user);
     });
@@ -53,7 +58,6 @@ passport.deserializeUser(function(user, done) {
   });
 });
 
-mongoose.connect(CONNECTION_STRING);
 
 // SCHEMAS
 var postSchema = mongoose.Schema({
@@ -75,15 +79,49 @@ var User = mongoose.model('User', userSchema);
 
 // ROUTES
 
+app.get('*', function(req, res, next) {
+  //store new variable so I don't have to pass in all the req.user data to jade views
+  res.locals.loggedIn = (req.user) ? true : false;
+  next();
+});
+
 // LOGIN ROUTES
-app.post('/login',
-  passport.authenticate('local', { successRedirect: '/new_blog',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
-);
+
+// app.post('/login',
+//   passport.authenticate('local', { successRedirect: '/',
+//                                    failureRedirect: '/login',
+//                                    failureFlash: true })
+// );
+
+app.post('/login', function(req, res, next){
+  passport.authenticate('local', function(err, user, info){
+    // This is the default destination upon successful login.
+    var redirectUrl = '/';
+
+    if (err) { 
+      return next(err);
+    }
+
+    if (!user) { 
+      req.flash('errorMessage', 'user not found');
+      return res.redirect('/login');
+    }
+
+    // If we have previously stored a redirectUrl, use that, 
+    // otherwise, use the default.
+    if (req.session.redirectUrl) {
+      redirectUrl = req.session.redirectUrl;
+      req.session.redirectUrl = null;
+    }
+    req.logIn(user, function(err){
+      if (err) { return next(err); }
+    });
+    res.redirect(redirectUrl);
+  })(req, res, next);
+});
+
 
 app.get('/login', function (req, res) {
-  // console.log(req.user);
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
@@ -98,22 +136,28 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
-// EDIT ACCOUNT ROUTES
-
 app.post('/signup', function (req, res) {
 
-  var new_user = new User({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    password: encryptPassword(req.body.password),
-  });
+  if(req.body.password === req.body.cpassword) {
+    var new_user = new User({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: encryptPassword(req.body.password),
+    });
+
     new_user.save(function (err, user) {
       if (err) {
         throw err;
       }
       res.redirect('/login');
     });
+  } else {
+    res.redirect('/signup');
+  }
+
+
+
 });
 
 // DASHBOARD ROUTES
@@ -134,12 +178,53 @@ app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
       lastname: user.lastname,
       email: user.email
     };
-    console.log(locals);
     res.render('edit_account', locals);
   });
 });
 
 // Update User Information
+app.post('/dashboard/edit_account', function (req, res) {
+
+  var updated_user = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email
+  }
+
+  User.findOneAndUpdate({email: req.user.email}, updated_user, function (err, user) {
+    if(err) {
+      return console.log(err);
+    }
+    res.redirect('/dashboard/edit_account');
+  });
+});
+
+//render change password form
+app.get('/dashboard/change_password', ensureAuthenticated, function (req, res) {
+  res.render('change_password');
+})
+
+//render change password form
+app.post('/dashboard/change_password', function (req, res) {
+  var new_password = req.body.password;
+  var password_check = (encryptPassword(req.body.current_password) === req.user.password);
+  var confirm_password_check = (new_password === req.body.cpassword);
+
+  if (password_check && confirm_password_check) {
+
+    User.findOneAndUpdate({email: req.user.email}, { password: encryptPassword(new_password) } , function (err, user) {
+      if(err) {
+        return console.log(err);
+      }
+      res.redirect('/dashboard');
+    });
+
+  } else {
+    res.redirect('/dashboard/change_password');
+  }
+
+
+})
 
 
 // BLOG ROUTES
@@ -167,8 +252,6 @@ app.get('/blog/:id', function (req, res) {
       author: blog.author,
       title: blog.title,
       body: blog.body.split(/\r?\n\r?\n/g)
-      // body: blog.body
-
     };
     res.render('./single_blog', locals);
   });
@@ -176,7 +259,24 @@ app.get('/blog/:id', function (req, res) {
 
 //Render New Blog Form
 app.get('/new_blog', ensureAuthenticated, function (req, res) {
-  res.render('new_blog_form.jade');
+  var locals = {
+    author: req.user.firstname + ' ' + req.user.lastname
+  };
+  res.render('new_blog_form.jade', locals);
+});
+
+//Submit a new blog
+app.post('/blog', function (req, res) {
+
+  req.body.author = req.user.firstname + ' ' + req.user.lastname;
+
+  var new_post = new Post(req.body);
+    new_post.save(function (err, blog) {
+    if(err) {
+      throw err;
+    }
+    res.redirect('/blog/' + blog._id);
+  });
 });
 
 //Render Edit Blog Form
@@ -192,17 +292,6 @@ app.get('/blog/:id/edit', ensureAuthenticated, function (req, res) {
       body: blog.body
     };
     res.render('./edit_blog', locals);
-  });
-});
-
-//Submit a new blog
-app.post('/blog', function (req, res) {
-  var new_post = new Post(req.body);
-    new_post.save(function (err, image) {
-    if(err) {
-      throw err;
-    }
-    res.redirect('/');
   });
 });
 
@@ -234,12 +323,16 @@ app.delete('/blog/:id', ensureAuthenticated, function (req, res) {
 
 //FUNCTIONS
 function ensureAuthenticated (req, res, next) {
-  // console.log(req.isAuthenticated());
-  // console.log(req.user);
   if (req.isAuthenticated() ){
     return next();
   }
+
+  //store the url they're coming from
+  req.session.redirectUrl = req.url;
+
+
   //not authenticated
+  req.flash("warn", "You must be logged-in to do that.");
   res.redirect('/login');
 };
 
@@ -251,23 +344,6 @@ function encryptPassword (password) {
 
   return shasum.digest('hex');
 };
-
-
-//FAKE USER
-// var User = {
-//   findOne : function (opts, cb){
-    
-//     var user = {
-//       id: 1, 
-//       username: "jon",
-//       password: "winners",
-//       validPassword: function (password) {
-//         return (password === "winners");
-//       }
-//     };
-//     cb (null, user);
-//   }
-// };
 
 
 module.exports.app = app;

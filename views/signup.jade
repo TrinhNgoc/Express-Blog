@@ -8,23 +8,24 @@ block signup_form
           div
             label
               | First Name:
-            input(type='text', name='firstname')
+            input(type='text', name='firstname', required)
           div
             label
               | Last Name:
-            input(type='text', name='lastname')
+            input(type='text', name='lastname', required)
           div
             label
               | Email:
-            input(type='text', name='email')
+            input(type='text', name='email', required)
           div
             label(for="password")
               | Password:
-            input(type='password', name='password', id="password")
+            input(type='password', name='password', id="password", required)
           div
             label(for="cpassword")
               | Confirm Password:
-            input(type='password', name='cpassword', id="cpassword" onkeyup="checkPassword(); return false;")
+            input(type='password', name='cpassword', id="cpassword", onkeyup="checkPassword(); return false;", required)
             span#confirmMessage
+              = errorMessage
           div
             button(type='submit') Sign Me Up!

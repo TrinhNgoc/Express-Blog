@@ -13,6 +13,6 @@ function checkPassword() {
   else {
     cpassword.style.backgroundColor = incorrectPWColor;
     message.style.color = incorrectPWColor;
-    message.innerHTML = "Incorrect Password. Check Again."
+    message.innerHTML = "Passwords do not match. Check Again."
   }
 };
