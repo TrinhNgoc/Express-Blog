@@ -80,9 +80,8 @@ var User = mongoose.model('User', userSchema);
 // ROUTES
 
 app.get('*', function(req, res, next) {
-  // just use boolean for loggedIn
+  //store new variable so I don't have to pass in all the req.user data to jade views
   res.locals.loggedIn = (req.user) ? true : false;
-
   next();
 });
 
@@ -123,7 +122,6 @@ app.post('/login', function(req, res, next){
 
 
 app.get('/login', function (req, res) {
-  // console.log(req.user);
   res.render('login', {user: req.user, messages: req.flash('error') });
 });
 
@@ -138,22 +136,28 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
-// EDIT ACCOUNT ROUTES
-
 app.post('/signup', function (req, res) {
 
-  var new_user = new User({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    password: encryptPassword(req.body.password),
-  });
+  if(req.body.password === req.body.cpassword) {
+    var new_user = new User({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      password: encryptPassword(req.body.password),
+    });
+
     new_user.save(function (err, user) {
       if (err) {
         throw err;
       }
       res.redirect('/login');
     });
+  } else {
+    res.redirect('/signup');
+  }
+
+
+
 });
 
 // DASHBOARD ROUTES
@@ -162,6 +166,7 @@ app.get('/dashboard', ensureAuthenticated, function (req, res) {
   res.render('dashboard.jade');
 });
 
+// EDIT ACCOUNT ROUTES
 // Load edit account page
 app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
   User.findOne({ email: req.user.email}, function (err, user) {
