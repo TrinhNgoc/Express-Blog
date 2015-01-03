@@ -166,7 +166,6 @@ app.get('/dashboard', ensureAuthenticated, function (req, res) {
   res.render('dashboard.jade');
 });
 
-// EDIT ACCOUNT ROUTES
 // Load edit account page
 app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
   User.findOne({ email: req.user.email}, function (err, user) {
@@ -200,6 +199,34 @@ app.post('/dashboard/edit_account', function (req, res) {
   });
 });
 
+//render change password form
+app.get('/dashboard/change_password', ensureAuthenticated, function (req, res) {
+  res.render('change_password');
+})
+
+//render change password form
+app.post('/dashboard/change_password', function (req, res) {
+  var new_password = req.body.password;
+  var password_check = (encryptPassword(req.body.current_password) === req.user.password);
+  var confirm_password_check = (new_password === req.body.cpassword);
+
+  if (password_check && confirm_password_check) {
+
+    User.findOneAndUpdate({email: req.user.email}, { password: encryptPassword(new_password) } , function (err, user) {
+      if(err) {
+        return console.log(err);
+      }
+      res.redirect('/dashboard');
+    });
+
+  } else {
+    res.redirect('/dashboard/change_password');
+  }
+
+
+})
+
+
 // BLOG ROUTES
 //Render all blog posts
 app.get('/', function (req, res) {
@@ -225,8 +252,6 @@ app.get('/blog/:id', function (req, res) {
       author: blog.author,
       title: blog.title,
       body: blog.body.split(/\r?\n\r?\n/g)
-      // body: blog.body
-
     };
     res.render('./single_blog', locals);
   });

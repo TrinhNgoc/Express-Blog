@@ -6193,17 +6193,17 @@ body {
       body div#single_blog div.small-9 div.post_area p.paragraph {
         font-size: 17px;
         font-family: 'Open Sans', sans-serif; }
-  body div.new_post, body div.edit_post, body div#signup_form, body div#login_form, body div#edit_account_form {
+  body div.new_post, body div.edit_post, body div#signup_form, body div#login_form, body div#edit_account_form, body div#change_password_form {
     display: block; }
-    body div.new_post div.row, body div.edit_post div.row, body div#signup_form div.row, body div#login_form div.row, body div#edit_account_form div.row {
+    body div.new_post div.row, body div.edit_post div.row, body div#signup_form div.row, body div#login_form div.row, body div#edit_account_form div.row, body div#change_password_form div.row {
       padding-top: 25px; }
-    body div.new_post form, body div.edit_post form, body div#signup_form form, body div#login_form form, body div#edit_account_form form {
+    body div.new_post form, body div.edit_post form, body div#signup_form form, body div#login_form form, body div#edit_account_form form, body div#change_password_form form {
       width: 100%;
       padding-top: 15px; }
-      body div.new_post form label, body div.new_post form p, body div.edit_post form label, body div.edit_post form p, body div#signup_form form label, body div#signup_form form p, body div#login_form form label, body div#login_form form p, body div#edit_account_form form label, body div#edit_account_form form p {
+      body div.new_post form label, body div.new_post form p, body div.edit_post form label, body div.edit_post form p, body div#signup_form form label, body div#signup_form form p, body div#login_form form label, body div#login_form form p, body div#edit_account_form form label, body div#edit_account_form form p, body div#change_password_form form label, body div#change_password_form form p {
         font-family: 'Open Sans', sans-serif;
         font-size: 25px; }
-      body div.new_post form input, body div.new_post form textarea#form_body, body div.new_post form button, body div.edit_post form input, body div.edit_post form textarea#form_body, body div.edit_post form button, body div#signup_form form input, body div#signup_form form textarea#form_body, body div#signup_form form button, body div#login_form form input, body div#login_form form textarea#form_body, body div#login_form form button, body div#edit_account_form form input, body div#edit_account_form form textarea#form_body, body div#edit_account_form form button {
+      body div.new_post form input, body div.new_post form textarea#form_body, body div.new_post form button, body div.edit_post form input, body div.edit_post form textarea#form_body, body div.edit_post form button, body div#signup_form form input, body div#signup_form form textarea#form_body, body div#signup_form form button, body div#login_form form input, body div#login_form form textarea#form_body, body div#login_form form button, body div#edit_account_form form input, body div#edit_account_form form textarea#form_body, body div#edit_account_form form button, body div#change_password_form form input, body div#change_password_form form textarea#form_body, body div#change_password_form form button {
         font-family: 'Open Sans', sans-serif;
         font-size: 20px; }
   body div.dashboard {
