@@ -10,15 +10,13 @@ nav.top-bar(data-topbar, role="navigation")
           | Menu
   section.top-bar-section
     ul.right
-      li
-        a(href="/signup")
-          | Sign Up
-      li
-        a(href="/login")
-          | Log In
       li.has-dropdown
         a(href="/dashboard")
           | My Account
+        ul.dropdown
+          li
+            a(href="/logout")
+              | Log Out
     ul.left
       li
         a(href="new_blog")

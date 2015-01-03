@@ -6,15 +6,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var methodOverride = require('method-override');
 var crypto = require('crypto');
-var app = express();
 var mongoose = require('mongoose');
+var app = express();
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
 
 // Middleware Area
 app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'jade');
 app.use(session({ 
-  secret: 'anime pregnancy test',
+  secret: 'blogify',
   resave: false,
   saveUninitialized: true
 }));
@@ -24,6 +24,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+mongoose.connect(CONNECTION_STRING);
+
+//Passport Area
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -33,9 +36,11 @@ passport.use(new LocalStrategy({
       if (err) { return done(err); }
       if (!user) {
         return done(null, false, { message: 'Incorrect email.' });
+
       }
       if (encryptPassword(password) !== user.password) {
         return done(null, false, { message: 'Incorrect password.' });
+
       }
       return done(null, user);
     });
@@ -53,7 +58,6 @@ passport.deserializeUser(function(user, done) {
   });
 });
 
-mongoose.connect(CONNECTION_STRING);
 
 // SCHEMAS
 var postSchema = mongoose.Schema({
@@ -75,11 +79,19 @@ var User = mongoose.model('User', userSchema);
 
 // ROUTES
 
+app.get('*', function(req, res, next) {
+  // just use boolean for loggedIn
+  res.locals.loggedIn = (req.user) ? true : false;
+
+  next();
+});
+
 // LOGIN ROUTES
+
 // app.post('/login',
-//   passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), function (req, res) {
-//     res.redirect('back');
-//   }  
+//   passport.authenticate('local', { successRedirect: '/',
+//                                    failureRedirect: '/login',
+//                                    failureFlash: true })
 // );
 
 app.post('/login', function(req, res, next){
@@ -92,7 +104,7 @@ app.post('/login', function(req, res, next){
     }
 
     if (!user) { 
-      req.flash("user not found");
+      req.flash('errorMessage', 'user not found');
       return res.redirect('/login');
     }
 
@@ -296,23 +308,6 @@ function encryptPassword (password) {
 
   return shasum.digest('hex');
 };
-
-
-//FAKE USER
-// var User = {
-//   findOne : function (opts, cb){
-    
-//     var user = {
-//       id: 1, 
-//       username: "jon",
-//       password: "winners",
-//       validPassword: function (password) {
-//         return (password === "winners");
-//       }
-//     };
-//     cb (null, user);
-//   }
-// };
 
 
 module.exports.app = app;
