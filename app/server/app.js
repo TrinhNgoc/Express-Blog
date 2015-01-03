@@ -150,7 +150,10 @@ app.post('/signup', function (req, res) {
       if (err) {
         throw err;
       }
-      res.redirect('/login');
+      req.logIn(user, function(err){
+        if (err) { return next(err); }
+      });
+      res.redirect('/');
     });
   } else {
     res.redirect('/signup');
