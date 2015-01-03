@@ -44,8 +44,24 @@ $opensans: 'Open Sans', sans-serif;
 
 body {
   background-image: url('/images/layout/washi/washi.png');
-  background-repeat: repeat; 
+  background-repeat: repeat;
 
+  //Navbar
+
+  nav.top-bar {
+    ul.title-area {
+      li.name {
+        h1 {
+          a {
+              font-weight: $font-bold;
+              font-family: $oleo;
+          }
+        }
+      }
+    }
+  }
+
+  //Title
   header#page_header {
 
     div.title {

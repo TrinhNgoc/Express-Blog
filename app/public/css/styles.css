@@ -6028,6 +6028,9 @@ th.hide-for-touch {
 body {
   background-image: url('/images/layout/washi/washi.png');
   background-repeat: repeat; }
+  body nav.top-bar ul.title-area li.name h1 a {
+    font-weight: 700;
+    font-family: 'Oleo Script', cursive; }
   body header#page_header div.title {
     text-align: center; }
     @media only screen and (min-width:60.5625rem) {
