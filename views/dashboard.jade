@@ -1,6 +1,18 @@
 extends ./layout.jade
 
 block dashboard
-  a(href="/dashboard/edit_account")
-    | Edit Account
+  div.dashboard
+    div.row
+      div.small-9.small-centered.columns
+        ul.dashboard_list
+          li 
+            a(href="#")
+              | View All Blog Posts
+          li 
+            a(href="/dashboard/edit_account")
+              | Edit Account Details
+          li
+            a(href="#")
+              | Change Password
+
   

@@ -289,8 +289,8 @@ body {
       width: 100%;
       padding-top: 15px;
 
-      label{
-        font-family: $lato;
+      label, p{
+        font-family: $opensans;
         font-size: 25px
       }
 
@@ -299,6 +299,29 @@ body {
         font-size: 20px;
       }
     }
+  }
+
+  //Dashboard Styles
+  div.dashboard {
+    
+    text-align: center;
+
+    ul.dashboard_list {
+      
+      margin-top: 60px;
+
+      li {
+        list-style-type: none;
+
+        a {
+          font-family: $opensans;
+          font-size: 25px;
+
+        }
+      }
+
+    }
+
   }
 
 

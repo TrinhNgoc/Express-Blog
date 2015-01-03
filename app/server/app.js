@@ -229,7 +229,21 @@ app.get('/blog/:id', function (req, res) {
 
 //Render New Blog Form
 app.get('/new_blog', ensureAuthenticated, function (req, res) {
-  res.render('new_blog_form.jade');
+  var locals = {
+    author: req.user.firstname + ' ' + req.user.lastname
+  };
+  res.render('new_blog_form.jade', locals);
+});
+
+//Submit a new blog
+app.post('/blog', function (req, res) {
+  var new_post = new Post(req.body);
+    new_post.save(function (err, blog) {
+    if(err) {
+      throw err;
+    }
+    res.redirect('/blog/' + blog._id);
+  });
 });
 
 //Render Edit Blog Form
@@ -245,17 +259,6 @@ app.get('/blog/:id/edit', ensureAuthenticated, function (req, res) {
       body: blog.body
     };
     res.render('./edit_blog', locals);
-  });
-});
-
-//Submit a new blog
-app.post('/blog', function (req, res) {
-  var new_post = new Post(req.body);
-    new_post.save(function (err, image) {
-    if(err) {
-      throw err;
-    }
-    res.redirect('/');
   });
 });
 

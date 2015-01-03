@@ -6,9 +6,10 @@ block new_post_form
       div.small-9.small-centered.columns
         form#new_post(action='/blog' method='POST')
           label.form_labels(for='form_author') Author
-          input#form_author(type='text' name='author')
+          p 
+            = author
           label.form_labels(for='form_title') Title
-          input#form_title(type='text' name='title')
+          input#form_title(type='text' name='title' required)
           label.form_labels(for='form_body') Blog Body
-          textarea#form_body(form='new_post', name='body', rows=20)
+          textarea#form_body(form='new_post', name='body', rows=20 required)
           button(type='submit') Publish Blog 

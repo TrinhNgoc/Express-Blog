@@ -6200,9 +6200,18 @@ body {
     body div.new_post form, body div.edit_post form, body div#signup_form form, body div#login_form form, body div#edit_account_form form {
       width: 100%;
       padding-top: 15px; }
-      body div.new_post form label, body div.edit_post form label, body div#signup_form form label, body div#login_form form label, body div#edit_account_form form label {
-        font-family: 'Lato', sans-serif;
+      body div.new_post form label, body div.new_post form p, body div.edit_post form label, body div.edit_post form p, body div#signup_form form label, body div#signup_form form p, body div#login_form form label, body div#login_form form p, body div#edit_account_form form label, body div#edit_account_form form p {
+        font-family: 'Open Sans', sans-serif;
         font-size: 25px; }
       body div.new_post form input, body div.new_post form textarea#form_body, body div.new_post form button, body div.edit_post form input, body div.edit_post form textarea#form_body, body div.edit_post form button, body div#signup_form form input, body div#signup_form form textarea#form_body, body div#signup_form form button, body div#login_form form input, body div#login_form form textarea#form_body, body div#login_form form button, body div#edit_account_form form input, body div#edit_account_form form textarea#form_body, body div#edit_account_form form button {
         font-family: 'Open Sans', sans-serif;
         font-size: 20px; }
+  body div.dashboard {
+    text-align: center; }
+    body div.dashboard ul.dashboard_list {
+      margin-top: 60px; }
+      body div.dashboard ul.dashboard_list li {
+        list-style-type: none; }
+        body div.dashboard ul.dashboard_list li a {
+          font-family: 'Open Sans', sans-serif;
+          font-size: 25px; }
