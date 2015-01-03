@@ -237,6 +237,9 @@ app.get('/new_blog', ensureAuthenticated, function (req, res) {
 
 //Submit a new blog
 app.post('/blog', function (req, res) {
+
+  req.body.author = req.user.firstname + ' ' + req.user.lastname;
+
   var new_post = new Post(req.body);
     new_post.save(function (err, blog) {
     if(err) {
