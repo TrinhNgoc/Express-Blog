@@ -237,18 +237,27 @@ body {
     div.small-9 {
       background-color: white;
 
+      @media #{$small-only}{
+        width: 95%;
+      }
+
       div#title_area {
 
         h3.title {
           font-family: $lato;
           font-size: 40px;
+          @media #{$small-only} {
+          font-size: 30px;
+         }
         }
 
         p.author {
           font-family: $lato;
           font-size: 20px;
+         @media #{$small-only} {
+          font-size: 1em;
+         }
         }
-
       }
       
       div#button_area {
@@ -266,9 +275,14 @@ body {
           button {
             font-family: $opensans; 
             font-weight: 300; 
-            background-color: #FD234D; 
+            background-color: #FD234D;
+            &:hover {
+              background-color: green;
+            } 
+            @media #{$small-only} {
+              padding: 10px;
+            }
           }
-
         }
       }
 

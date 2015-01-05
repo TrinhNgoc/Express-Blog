@@ -6179,12 +6179,21 @@ body {
               background-color: #FD234D; }
   body div#single_blog div.small-9 {
     background-color: white; }
+    @media only screen and (max-width: 40em) {
+      body div#single_blog div.small-9 {
+        width: 95%; } }
     body div#single_blog div.small-9 div#title_area h3.title {
       font-family: 'Lato', sans-serif;
       font-size: 40px; }
+      @media only screen and (max-width: 40em) {
+        body div#single_blog div.small-9 div#title_area h3.title {
+          font-size: 30px; } }
     body div#single_blog div.small-9 div#title_area p.author {
       font-family: 'Lato', sans-serif;
       font-size: 20px; }
+      @media only screen and (max-width: 40em) {
+        body div#single_blog div.small-9 div#title_area p.author {
+          font-size: 1em; } }
     body div#single_blog div.small-9 div#button_area {
       text-align: right; }
       body div#single_blog div.small-9 div#button_area form {
@@ -6196,6 +6205,11 @@ body {
           font-family: 'Open Sans', sans-serif;
           font-weight: 300;
           background-color: #FD234D; }
+          body div#single_blog div.small-9 div#button_area form button:hover {
+            background-color: green; }
+          @media only screen and (max-width: 40em) {
+            body div#single_blog div.small-9 div#button_area form button {
+              padding: 10px; } }
     body div#single_blog div.small-9 div.post_area {
       margin-top: 20px; }
       body div#single_blog div.small-9 div.post_area p.paragraph {
