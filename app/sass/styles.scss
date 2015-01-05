@@ -125,6 +125,9 @@ body {
           letter-spacing: 1px;
           font-size: 13px;
           margin-bottom: 25px;
+          @media #{$small-only} {
+            font-size: 10px;
+          }
         }
         p.tag{
           //background-color: green;
@@ -142,6 +145,10 @@ body {
           margin-bottom: -5px;
           font-family: $josefin;
           font-weight: $font-semibold;
+          @media #{$small-only} {
+          font-size: 1em;
+          margin-bottom: 5px;
+          }
         }
         a.button {
           background-color: #FD234D;
@@ -150,8 +157,8 @@ body {
           margin: 0 0;
           border-radius: 2px;
           width: 140px;
+          }
         }
-      }
 
       div.orbit-container {
         position: relative;
@@ -259,13 +266,13 @@ body {
           button {
             font-family: $opensans; 
             font-weight: 300; 
+            background-color: #FD234D; 
           }
 
         }
       }
 
       div.post_area {
-
         margin-top: 20px; 
 
         p.paragraph {
@@ -297,6 +304,9 @@ body {
       input, textarea#form_body, button{
         font-family: $opensans;
         font-size: 20px;
+      }
+      button {
+        background-color: #FD234D;
       }
     }
   }

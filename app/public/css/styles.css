@@ -6077,6 +6077,9 @@ body {
         letter-spacing: 1px;
         font-size: 13px;
         margin-bottom: 25px; }
+        @media only screen and (max-width: 40em) {
+          body div#blog_main div.blog_content div.orbit-caption p {
+            font-size: 10px; } }
       body div#blog_main div.blog_content div.orbit-caption p.tag {
         padding-left: -25px;
         margin-bottom: 10px;
@@ -6091,6 +6094,10 @@ body {
         margin-bottom: -5px;
         font-family: 'Josefin Slab', serif;
         font-weight: 600; }
+        @media only screen and (max-width: 40em) {
+          body div#blog_main div.blog_content div.orbit-caption h3 {
+            font-size: 1em;
+            margin-bottom: 5px; } }
       body div#blog_main div.blog_content div.orbit-caption a.button {
         background-color: #FD234D;
         padding-top: 10px;
@@ -6187,7 +6194,8 @@ body {
           margin-left: 10px; }
         body div#single_blog div.small-9 div#button_area form button {
           font-family: 'Open Sans', sans-serif;
-          font-weight: 300; }
+          font-weight: 300;
+          background-color: #FD234D; }
     body div#single_blog div.small-9 div.post_area {
       margin-top: 20px; }
       body div#single_blog div.small-9 div.post_area p.paragraph {
@@ -6206,6 +6214,8 @@ body {
       body div.new_post form input, body div.new_post form textarea#form_body, body div.new_post form button, body div.edit_post form input, body div.edit_post form textarea#form_body, body div.edit_post form button, body div#signup_form form input, body div#signup_form form textarea#form_body, body div#signup_form form button, body div#login_form form input, body div#login_form form textarea#form_body, body div#login_form form button, body div#edit_account_form form input, body div#edit_account_form form textarea#form_body, body div#edit_account_form form button, body div#change_password_form form input, body div#change_password_form form textarea#form_body, body div#change_password_form form button {
         font-family: 'Open Sans', sans-serif;
         font-size: 20px; }
+      body div.new_post form button, body div.edit_post form button, body div#signup_form form button, body div#login_form form button, body div#edit_account_form form button, body div#change_password_form form button {
+        background-color: #FD234D; }
   body div.dashboard {
     text-align: center; }
     body div.dashboard ul.dashboard_list {
