@@ -6205,8 +6205,6 @@ body {
           font-family: 'Open Sans', sans-serif;
           font-weight: 300;
           background-color: #FD234D; }
-          body div#single_blog div.small-9 div#button_area form button:hover {
-            background-color: green; }
           @media only screen and (max-width: 40em) {
             body div#single_blog div.small-9 div#button_area form button {
               padding: 10px; } }
