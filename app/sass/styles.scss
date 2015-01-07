@@ -310,6 +310,33 @@ body {
     }
   }
 
+  //Styles for Single Blog Post Page
+  div#single_blog {
+
+    div#button_area {
+
+      div#edit_link {
+        background-color: #FD234D;
+        text-align: center;
+        display: inline-block;
+        padding: 1rem 2.55rem 1.0625rem;
+        margin-top: 20px;
+        margin-bottom: 0px;
+
+        a {
+          font-family: $opensans;
+          font-weight: 300;
+          color: white;
+          font-size: 1rem;
+
+        }
+
+      }
+
+    }
+
+  }
+
   //Styles for New_Post and Edit Post Pages
   div.new_post, div.edit_post, div#signup_form, div#login_form, div#edit_account_form, div#change_password_form{
 

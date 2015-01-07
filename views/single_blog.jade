@@ -5,16 +5,16 @@ block single_blog_post
     div.row
       div.small-9.small-centered.columns
         div.row
-          div.small-5.columns
+          div.small-8.columns
             div#title_area
               h3.title 
                 =title
               p.author by 
                 =author
-          div.small-7.columns
+          div.small-4.columns
             div#button_area
-              form#edit_link(action='/blog/'+id+'/edit' method='GET')
-                button(type='submit') Edit Post
+              div#edit_link
+                a(href='/blog/'+id+'/edit') Edit Post
 
               form#delete_link(action='/blog/'+id+'?_method=DELETE' method='POST')
                 input(type='hidden' name='_method' value='DELETE')

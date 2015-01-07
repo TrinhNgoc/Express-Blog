@@ -302,7 +302,6 @@ app.get('/blog/:id/edit', ensureAuthenticated, function (req, res) {
 app.put('/blog/:id', function (req, res) {
   var blogpost = {
     title: req.body.title,
-    author: req.body.author,
     body: req.body.body
   };
 
