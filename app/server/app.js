@@ -122,7 +122,7 @@ app.post('/login', function(req, res, next){
 
 
 app.get('/login', function (req, res) {
-  res.render('login', {user: req.user, messages: req.flash('error') });
+  res.render('./login_views/login.jade', {user: req.user, messages: req.flash('error') });
 });
 
 
@@ -133,7 +133,7 @@ app.get('/logout', function (req, res) {
 
 // SIGNUP ROUTES
 app.get('/signup', function (req, res) {
-  res.render('signup');
+  res.render('./login_views/signup.jade');
 });
 
 app.post('/signup', function (req, res) {
@@ -150,7 +150,10 @@ app.post('/signup', function (req, res) {
       if (err) {
         throw err;
       }
-      res.redirect('/login');
+      req.logIn(user, function(err){
+        if (err) { return next(err); }
+      });
+      res.redirect('/');
     });
   } else {
     res.redirect('/signup');
@@ -163,7 +166,7 @@ app.post('/signup', function (req, res) {
 // DASHBOARD ROUTES
 // Load Dashboard Page
 app.get('/dashboard', ensureAuthenticated, function (req, res) {
-  res.render('dashboard.jade');
+  res.render('./account_editing/dashboard.jade');
 });
 
 // Load edit account page
@@ -178,7 +181,7 @@ app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
       lastname: user.lastname,
       email: user.email
     };
-    res.render('edit_account', locals);
+    res.render('./account_editing/edit_account.jade', locals);
   });
 });
 
@@ -201,7 +204,7 @@ app.post('/dashboard/edit_account', function (req, res) {
 
 //render change password form
 app.get('/dashboard/change_password', ensureAuthenticated, function (req, res) {
-  res.render('change_password');
+  res.render('./account_editing/change_password');
 })
 
 //render change password form
@@ -237,7 +240,7 @@ app.get('/', function (req, res) {
     var locals = {
       blogs: blogposts
     };
-    res.render('./index', locals);
+    res.render('./index.jade', locals);
   });
 });
 
@@ -253,7 +256,7 @@ app.get('/blog/:id', function (req, res) {
       title: blog.title,
       body: blog.body.split(/\r?\n\r?\n/g)
     };
-    res.render('./single_blog', locals);
+    res.render('./blog_views/single_blog.jade', locals);
   });
 });
 
@@ -262,7 +265,7 @@ app.get('/new_blog', ensureAuthenticated, function (req, res) {
   var locals = {
     author: req.user.firstname + ' ' + req.user.lastname
   };
-  res.render('new_blog_form.jade', locals);
+  res.render('./blog_views/new_blog_form.jade', locals);
 });
 
 //Submit a new blog
@@ -291,7 +294,7 @@ app.get('/blog/:id/edit', ensureAuthenticated, function (req, res) {
       title: blog.title,
       body: blog.body
     };
-    res.render('./edit_blog', locals);
+    res.render('./blog_views/edit_blog.jade', locals);
   });
 });
 
@@ -299,7 +302,6 @@ app.get('/blog/:id/edit', ensureAuthenticated, function (req, res) {
 app.put('/blog/:id', function (req, res) {
   var blogpost = {
     title: req.body.title,
-    author: req.body.author,
     body: req.body.body
   };
 

@@ -6227,6 +6227,18 @@ body {
       body div#single_blog div.small-9 div.post_area p.paragraph {
         font-size: 17px;
         font-family: 'Open Sans', sans-serif; }
+  body div#single_blog div#button_area div#edit_link {
+    background-color: #FD234D;
+    text-align: center;
+    display: inline-block;
+    padding: 1rem 2.55rem 1.0625rem;
+    margin-top: 20px;
+    margin-bottom: 0px; }
+    body div#single_blog div#button_area div#edit_link a {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      color: white;
+      font-size: 1rem; }
   body div.new_post, body div.edit_post, body div#signup_form, body div#login_form, body div#edit_account_form, body div#change_password_form {
     display: block; }
     body div.new_post div.row, body div.edit_post div.row, body div#signup_form div.row, body div#login_form div.row, body div#edit_account_form div.row, body div#change_password_form div.row {
