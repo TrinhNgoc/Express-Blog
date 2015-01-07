@@ -1,6 +1,15 @@
 Express-Blog
 ============
 
+To run app:
+1. Clone the repo
+2. npm install in terminal
+3. bower install in terminal
+4. Install gulp globally in terminal
+5. To get DBPASS, go to https://cryptobin.org/z1n7q6e2 
+6. Run DBPASS="insert_password" gulp in terminal
+7. View in localhost:4000 in browser
+
 MEH stack - Mongo Express and HTML5 
 
 Use the MEH stack plus *almost* any other library or templating engines you want to fulfill the requirements.  
