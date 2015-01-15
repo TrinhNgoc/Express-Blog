@@ -9,6 +9,10 @@ var crypto = require('crypto');
 var mongoose = require('mongoose');
 var app = express();
 var CONNECTION_STRING = ('mongodb://blog:' + process.env.DBPASS + '@ds027761.mongolab.com:27761/winninghardest_expressblog');
+var User = require('../models/users.js');
+var Post = require('../models/post.js');
+var auth = require('../controllers/auth.js');
+var accounts = require('../controllers/user_info.js');
 
 // Middleware Area
 app.use(express.static(__dirname + '/../public'));
@@ -58,25 +62,6 @@ passport.deserializeUser(function(user, done) {
   });
 });
 
-
-// SCHEMAS
-var postSchema = mongoose.Schema({
-  author: String,
-  title: String,
-  body: String
-});
-
-var userSchema = mongoose.Schema({
-  firstname: String,
-  lastname: String,
-  email: String,
-  password: String
-});
-
-// MODELS
-var Post = mongoose.model('Post', postSchema);
-var User = mongoose.model('User', userSchema);
-
 // ROUTES
 
 app.get('*', function(req, res, next) {
@@ -85,89 +70,19 @@ app.get('*', function(req, res, next) {
   next();
 });
 
-// LOGIN ROUTES
-
-// app.post('/login',
-//   passport.authenticate('local', { successRedirect: '/',
-//                                    failureRedirect: '/login',
-//                                    failureFlash: true })
-// );
-
-app.post('/login', function(req, res, next){
-  passport.authenticate('local', function(err, user, info){
-    // This is the default destination upon successful login.
-    var redirectUrl = '/';
-
-    if (err) { 
-      return next(err);
-    }
-
-    if (!user) { 
-      req.flash('errorMessage', 'user not found');
-      return res.redirect('/login');
-    }
-
-    // If we have previously stored a redirectUrl, use that, 
-    // otherwise, use the default.
-    if (req.session.redirectUrl) {
-      redirectUrl = req.session.redirectUrl;
-      req.session.redirectUrl = null;
-    }
-    req.logIn(user, function(err){
-      if (err) { return next(err); }
-    });
-    res.redirect(redirectUrl);
-  })(req, res, next);
-});
 
 
-app.get('/login', function (req, res) {
-  res.render('./login_views/login.jade', {user: req.user, messages: req.flash('error') });
-});
-
-
-app.get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
+app.post('/login', auth.login);
+app.get('/login', auth.view_login);
+app.get('/logout', auth.logout);
 
 // SIGNUP ROUTES
-app.get('/signup', function (req, res) {
-  res.render('./login_views/signup.jade');
-});
-
-app.post('/signup', function (req, res) {
-
-  if(req.body.password === req.body.cpassword) {
-    var new_user = new User({
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      email: req.body.email,
-      password: encryptPassword(req.body.password),
-    });
-
-    new_user.save(function (err, user) {
-      if (err) {
-        throw err;
-      }
-      req.logIn(user, function(err){
-        if (err) { return next(err); }
-      });
-      res.redirect('/');
-    });
-  } else {
-    res.redirect('/signup');
-  }
-
-
-
-});
+app.get('/signup', auth.view_signup);
+app.post('/signup', auth.signup);
 
 // DASHBOARD ROUTES
 // Load Dashboard Page
-app.get('/dashboard', ensureAuthenticated, function (req, res) {
-  res.render('./account_editing/dashboard.jade');
-});
+app.get('/dashboard', ensureAuthenticated, accounts.view_dashboard);
 
 // Load edit account page
 app.get('/dashboard/edit_account', ensureAuthenticated, function (req, res) {
