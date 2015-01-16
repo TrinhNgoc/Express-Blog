@@ -1,5 +1,65 @@
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var crypto = require('crypto');
+var mongoose = require('mongoose');
+var flash = require ('connect-flash');
 
+var User = require('../models/users.js');
+
+//Passport Area
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+  },
+  function(email, password, done) {
+    User.findOne({ email: email }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect email.' });
+
+      }
+      if (encryptPassword(password) !== user.password) {
+        return done(null, false, { message: 'Incorrect password.' });
+
+      }
+      return done(null, user);
+    });
+  }
+));
+
+passport.serializeUser(function(user, done) {
+  // console.log("serialize", user);
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  User.findById(user._id, function(err, user) {
+    done(null, user);
+  });
+});
+
+//FUNCTIONS
+function ensureAuthenticated (req, res, next) {
+  if (req.isAuthenticated() ){
+    return next();
+  }
+
+  //store the url they're coming from
+  req.session.redirectUrl = req.url;
+
+  //not authenticated
+  req.flash("warn", "You must be logged-in to do that.");
+  res.redirect('/login');
+};
+
+function encryptPassword (password) {
+  var salt = "allwedoiswin";
+  var shasum = crypto.createHash('sha512');
+
+  shasum.update ( password + salt );
+
+  return shasum.digest('hex');
+};
 // LOGIN ROUTES
 
 // app.post('/login',
@@ -77,5 +137,7 @@ module.exports = {
   view_login: view_login,
   logout: logout,
   view_signup: view_signup,
-  signup: signup
+  signup: signup,
+  ensureAuthenticated: ensureAuthenticated,
+  encryptPassword: encryptPassword
 };
